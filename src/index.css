@@ -10,8 +10,12 @@
   font-style: normal;
 }
 
-/* font-family: 'Clash Display', sans-serif; */
-/* font-family: 'Satoshi', sans-serif; */
+@font-face {
+  font-family: "Clash-Display";
+  src: url(/src/assets/fonts/ClashDisplay-Variable.ttf);
+  font-display: swap;
+  font-style: normal;
+}
 
 body {
   box-sizing: border-box;
@@ -23,8 +27,13 @@ body {
 
 #menu.active {
   left: 0;
+  transition: all 0.5s ease-in-out;
 }
 
 .close.menu {
   left: -30em;
+}
+
+.clash {
+  font-family: Clash-Display;
 }

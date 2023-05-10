@@ -17,13 +17,13 @@ const Header = () => {
   };
 
   return (
-    <div>
-      <div className="flex items-center px-3 md:px-0 py-[22px] md:py-[45px] bg-white fixed w-full justify-around">
+    <>
+      <div className="flex items-center px-3 md:px-0 py-[22px] md:py-[45px] bg-white sticky w-full justify-around">
         <div className="md:hidden">
           <img onClick={openToggle} src={hamburger} alt="" />
         </div>
         <div className="m-auto md:m-0">
-          <img className="w-[5em] md:w-[7em]" src={artsylogo} alt="logo" />
+          <img className="w-[5em] md:w-[6em]" src={artsylogo} alt="logo" />
         </div>
 
         <div>
@@ -31,7 +31,9 @@ const Header = () => {
             {navlink.map((link) => {
               return (
                 <>
-                  <li>{link.link}</li>
+                  <li className="text-[#292929] text-base leading-[32px] font-[500] hover:underline">
+                    {link.link}
+                  </li>
                 </>
               );
             })}
@@ -49,7 +51,7 @@ const Header = () => {
         id="menu"
         className={`${
           openmenu ? "#menu active" : "#menu"
-        } md:hidden active-menu bg-white py-[24px] px-[30px] left-[-30em] flex flex-col gap-y-[50px] absolute h-5/6 w-full`}
+        } md:hidden active-menu bg-white py-[24px] z-10 px-[30px] top-0 left-[-35em] flex flex-col gap-y-[50px] absolute h-5/6 w-full`}
       >
         <div className="flex justify-between">
           <img className="w-[5em]" src={artsylogo} alt="logo" />
@@ -74,7 +76,7 @@ const Header = () => {
           <img src={chat} className="float-right" alt="" />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

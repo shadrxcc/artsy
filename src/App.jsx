@@ -1,13 +1,13 @@
-import Header from "./components/header"
+import Header from "./components/header";
+import Hero from "./components/hero";
 
 function App() {
- 
-
   return (
     <>
-<Header/>
+      <Header />
+      <Hero />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
