@@ -2,10 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @font-face {
   font-family: "Satoshi-Variable";
   src: url(/src/assets/fonts/Satoshi-Variable.ttf);
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "STIX";
+  src: url(/src/assets/fonts/STIXTwoText-VariableFont_wght.ttf);
   font-display: swap;
   font-style: normal;
 }
@@ -28,6 +34,7 @@ body {
 #menu.active {
   left: 0;
   transition: all 0.5s ease-in-out;
+  height: 100vh;
 }
 
 .close.menu {
@@ -36,4 +43,8 @@ body {
 
 .clash {
   font-family: Clash-Display;
+}
+
+.stix {
+  font-family: STIX;
 }

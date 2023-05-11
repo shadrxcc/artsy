@@ -31,7 +31,10 @@ const Header = () => {
             {navlink.map((link) => {
               return (
                 <>
-                  <li className="text-[#292929] text-base leading-[32px] font-[500] hover:underline">
+                  <li
+                    key={link.id}
+                    className="text-[#292929] text-base leading-[32px] font-[500] hover:underline"
+                  >
                     {link.link}
                   </li>
                 </>

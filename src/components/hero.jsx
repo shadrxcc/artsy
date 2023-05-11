@@ -9,9 +9,13 @@ const Hero = () => {
           {" "}
           Photography is poetry & beautiful untold stories
         </p>
-        <p className="text-[#292929] px-[1.2em] md:px-12 lg:px-0 text-base lg:text-[28px] leading-[25px] lg:leading-[44px] font-medium text-center m-auto lg:w-[926px]">Flip through more than 10,000 vintage shots, old photograghs, historic images and captures seamlessly in one place. Register to get top access.</p>
+        <p className="text-[#292929] px-[1.2em] md:px-12 lg:px-0 text-base lg:text-[28px] leading-[25px] lg:leading-[44px] font-medium text-center m-auto lg:w-[926px]">
+          Flip through more than 10,000 vintage shots, old photograghs, historic
+          images and captures seamlessly in one place. Register to get top
+          access.
+        </p>
       </div>
-      <Herocarousel/>
+      <Herocarousel />
     </div>
   );
 };
