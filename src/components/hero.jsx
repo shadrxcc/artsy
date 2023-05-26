@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <div className="">
       <div className="flex flex-col gap-y-[10px] md:gap-y-[50px]">
-        <p className="clash text-[#292929] px-[1.5em] md:px-[6px] leading-[48px] text-2xl md:text-[3.5rem] md:leading-[65px] font-medium lg:text-[80px] lg:w-[1068px] lg:font-semibold lg:leading-[125px] m-auto text-center">
+        <p className="clash text-[#292929] px-[1.5em] md:px-[6px] leading-[48px] text-2xl md:text-[3.5rem] md:leading-[65px] font-medium lg:text-[80px] xl:w-[1068px] lg:font-semibold lg:leading-[125px] m-auto text-center">
           {" "}
           Photography is poetry & beautiful untold stories
         </p>

@@ -2,6 +2,7 @@ import Featuredsection from "./components/featuredsection";
 import Header from "./components/header";
 import Hero from "./components/hero";
 import React from "react";
+import Upcoming from "./components/upcoming";
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <Hero />
       <Featuredsection/>
+      <Upcoming/>
     </>
   );
 }

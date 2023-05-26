@@ -54,7 +54,7 @@ const Header = () => {
         id="menu"
         className={`${
           openmenu ? "#menu active" : "#menu"
-        } md:hidden active-menu bg-white py-[24px] z-10 px-[30px] top-0 left-[-35em] flex flex-col gap-y-[50px] absolute h-5/6 w-full`}
+        } md:hidden active-menu bg-white py-[24px] z-10 px-[30px] top-0 left-[-60em] flex flex-col gap-y-[50px] absolute h-5/6 w-full`}
       >
         <div className="flex justify-between">
           <img className="w-[5em]" src={artsylogo} alt="logo" />
