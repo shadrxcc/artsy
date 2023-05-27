@@ -6,6 +6,9 @@ import feature2 from "../assets/egyptian-desktop.png";
 import feature3 from "../assets/mummy-desktop.png";
 import monalisa from "../assets/monalisa-desktop.png";
 // import notification from '../assets/notificationicon.svg'
+import creatorone from "../assets/top-creator.svg";
+import creatortwo from "../assets/top-creator-2.svg";
+import creatorthree from "../assets/top-creator-3.svg";
 
 var idn = uuid();
 
@@ -95,6 +98,23 @@ const UpcomingData = [
 ];
 
 export default UpcomingData;
+
+export const topcreators = [
+  {
+    id: 1,
+    img: creatorone
+  },
+
+  {
+    id: 2,
+    img: creatortwo
+  },
+
+  {
+    id: 3,
+    img: creatorthree
+  },
+]
 
 //auction https://gist.githubusercontent.com/eniiku/65a95533de1f005eee35d5eb91f3e141/raw/c7188e070a8670a86883ff57224dcad277814761/auction.json
 // carusel https://gist.githubusercontent.com/eniiku/65a95533de1f005eee35d5eb91f3e141/raw/c7188e070a8670a86883ff57224dcad277814761/carousel.json
