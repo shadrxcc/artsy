@@ -24,6 +24,13 @@
 }
 
 @font-face {
+  font-family: "Baskerville";
+  src: url(/src/assets/fonts/Baskervville/Baskervville-Regular.ttf);
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "Clash-Display";
   src: url(/src/assets/fonts/ClashDisplay-Variable.ttf);
   font-display: swap;
@@ -62,4 +69,8 @@ body {
 
 .belle {
   font-family: Belle-Fair;
+}
+
+.bask {
+  font-family: Baskerville;
 }
