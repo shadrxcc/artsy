@@ -4,6 +4,7 @@ import { icons, navlink } from "./data";
 import hamburger from "../assets/hamburger.svg";
 import close from "../assets/x.svg";
 import chat from "../assets/chat.svg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [openmenu, setOpenMenu] = useState(false);
@@ -31,12 +32,11 @@ const Header = () => {
             {navlink.map((link) => {
               return (
                 <>
-                  <li
-                    key={link.id}
-                    className="text-[#292929] text-base leading-[32px] font-[500] hover:underline"
-                  >
-                    {link.link}
-                  </li>
+                  <Link to={link.nav} key={link.id}>
+                    <li className="text-[#292929] text-base leading-[32px] font-[500] hover:underline">
+                      {link.link}
+                    </li>
+                  </Link>
                 </>
               );
             })}
@@ -66,9 +66,11 @@ const Header = () => {
             {navlink.map((link) => {
               return (
                 <>
-                  <li className="leading-52px text-[24px] font-[500]">
-                    {link.link}
-                  </li>
+                  <Link onClick={closeToggle} to={link.nav} key={link.id}>
+                    <li className="leading-52px text-[24px] font-[500]">
+                      {link.link}
+                    </li>
+                  </Link>
                 </>
               );
             })}

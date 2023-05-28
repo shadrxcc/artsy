@@ -9,6 +9,15 @@ import monalisa from "../assets/monalisa-desktop.png";
 import creatorone from "../assets/top-creator.svg";
 import creatortwo from "../assets/top-creator-2.svg";
 import creatorthree from "../assets/top-creator-3.svg";
+import philo from '../assets/philomena.svg'
+import egypt from '../assets/boolean-egypt.svg'
+import blanc from '../assets/blanc.svg'
+import ellipsia from '../assets/elypsia.svg'
+import lawmakers from '../assets/lawmakers.svg'
+import veil from '../assets/veil.svg'
+import alternate from '../assets/alternating.svg'
+import rose from '../assets/rosemary.svg'
+import beverly from '../assets/beverly.svg'
 
 var idn = uuid();
 
@@ -16,18 +25,22 @@ export const navlink = [
   {
     id: 1,
     link: "Home",
+    nav: '/'
   },
   {
     id: 2,
     link: "Marketplace",
+    nav: '/market'
   },
   {
     id: 3,
     link: "Auction",
+    nav: '/auction'
   },
   {
     id: 4,
     link: "Drop",
+    nav: '/drop'
   },
 ];
 
@@ -121,33 +134,157 @@ export const topcreators = [
 // drop https://gist.githubusercontent.com/eniiku/65a95533de1f005eee35d5eb91f3e141/raw/c7188e070a8670a86883ff57224dcad277814761/drops.json
 // products https://gist.githubusercontent.com/eniiku/65a95533de1f005eee35d5eb91f3e141/raw/c7188e070a8670a86883ff57224dcad277814761/products.json
 
-// export const UpcomingData = [
-//   {
-//     id: "01",
-//     url: monalisa,
-//     title: "ALTE REDEFINED IN STYLE.",
-//     date: "Starts : 08:00 GTS . Monday ",
-//     desc: "GET EXCLUSIVE VIEWING OF CONTEMPORARY ART AND CONNECT WITH INVESTORS AND AUCTIONEERS ACROSS THE WORLD BRINGING THEIR HIGHEST AND LOWEST BIDS.",
-//   },
-//   {
-//     id: "02",
-//     url: monalisa,
-//     title: "AUTUMN LEAF",
-//     date: "Starts : 10:45 GTS . Wednesday ",
-//     desc: "The artwork captures the beauty of a single autumn leaf. The leaf is a vibrant orange, with hints of red and yellow along its edges. The use of light and shadow adds depth and dimension to the piece, highlighting the delicate veins and intricate patterns of the leaf.",
-//   },
-//   {
-//     id: "03",
-//     url: monalisa,
-//     title: "YOUNG IRISH MODEL.",
-//     date: "Starts : 09:00 GTS . Thursday ",
-//     desc: "The artwork features a pale model, standing against a dark and moody background. The model's porcelain skin is the focus of the piece, contrasting sharply with the shadowy surroundings. The model's delicate features and slender figure are perfectly captured, adding to the ethereal and otherworldly quality of the piece.",
-//   },
-//   {
-//     id: "04",
-//     url: monalisa,
-//     title: "BABY KANGAROO.",
-//     date: "Starts : 12:00 GTS . Saturday ",
-//     desc: "The artwork features a cute and cuddly baby kangaroo. The baby's soft, fluffy fur is captured in great detail, with its adorable face and curious eyes drawing the viewer in.",
-//   },
-// ];
+export const productsdata = [
+  {
+    id: 1,
+    name: "PHILOMENA ‘22",
+    price: 3.90,
+    creator: "Lisa Frank",
+    img: philo,
+    type: "Optics",
+    madeIn: "Italy",
+    views: 121,
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    listing:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    status:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    feautured: true,
+  },
+  {
+    id: 2,
+    name: "BOOLEAN EGYPTIAN",
+    price: 150.0,
+    creator: "Lola Oge",
+    img: egypt,
+    type: "Fashion",
+    madeIn: "Egypt",
+    views: 730,
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    listing:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    status:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    feautured: true,
+  },
+  {
+    id: 3,
+    name: "BLANC",
+    price: 39.0,
+    creator: "Shawn Brights",
+    img: blanc,
+    type: "Fashion",
+    madeIn: "Austria",
+    views: 340,
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    listing:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    status:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    feautured: false,
+  },
+  {
+    id: 4,
+    name: "ELLIPSIA",
+    price: 234.0,
+    creator: "Ali Dawa",
+    img: ellipsia,
+    type: "Optics",
+    madeIn: "Egypt",
+    views: 11,
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    listing:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    status:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    feautured: true,
+  },
+  {
+    id: 5,
+    name: "THE LAWMAKERS ",
+    price: 212.0,
+    creator: "Ali Dawa",
+    img: lawmakers,
+    type: "Editorials",
+    madeIn: "Italy",
+    views: 21,
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    listing:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    status:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    feautured: false,
+  },
+  {
+    id: 6,
+    name: "VEIL",
+    price: 64.0,
+    img: veil,
+    type: "Fashion",
+    madeIn: "Nigeria",
+    views: 59,
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    listing:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    status:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    feautured: false,
+  },
+
+  {
+    id: 7,
+    name: "ALTERNATING",
+    price: 64.0,
+    img: alternate,
+    type: "Optics",
+    madeIn: "Nigeria",
+    views: 59,
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    listing:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    status:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    feautured: false,
+  },
+
+  {
+    id: 8,
+    name: "ROSEMARY ‘22",
+    price: 64.0,
+    img: rose,
+    type: "Fashion",
+    madeIn: "Nigeria",
+    views: 59,
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    listing:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    status:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    feautured: false,
+  },
+
+  {
+    id: 9,
+    name: "BEVERLY",
+    price: 64.0,
+    img: beverly,
+    type: "Nature",
+    madeIn: "Nigeria",
+    views: 59,
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    listing:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    status:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    feautured: false,
+  },
+]

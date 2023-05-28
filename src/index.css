@@ -74,3 +74,17 @@ body {
 .bask {
   font-family: Baskerville;
 }
+
+button#accordion-button-\:r1\: {
+  background: none;
+}
+
+button#accordion-button-\:r9\: {
+  background: transparent;
+}
+
+span.MuiSlider-root.MuiSlider-colorPrimary.MuiSlider-sizeMedium.css-187mznn-MuiSlider-root {
+  color: #333333;
+  width: 244px;
+}
+
