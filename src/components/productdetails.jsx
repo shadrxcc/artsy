@@ -38,7 +38,7 @@ const Productdetails = () => {
   const [collectionData, setCollectionData] = useState(collection);
 
   return (
-    <div className="px-2 flex flex-col gap-y-20 md:px-10 mx-auto">
+    <div className="px-4 flex flex-col gap-y-20 md:px-10 mx-auto">
       <div className="flex flex-col md:flex-row justify-center">
         <div
           className="w-full h-[50vh] md:h-auto lg:w-1/4 bg-cover bg-center bg-no-repeat"
@@ -151,13 +151,13 @@ const Productdetails = () => {
       </div>
 
       <div>
-        <div className="flex bg-white shadow items-center p-7 rounded-2xl justify-between">
-          <p className="text-[32px] leading-8 font-medium">
+        <div className="flex bg-white shadow items-center flex-col md:flex-row gap-y-6 p-7 rounded-2xl justify-between">
+          <p className="text-xl md:text-[32px] text-center md:text-start leading-8 font-medium">
             Explore more from this collection
           </p>
           <span className="flex gap-x-9">
-            <img src={left} alt="" />
-            <img src={right} alt="" />
+            <img src={left} className="w-16" alt="" />
+            <img src={right} className="w-16" alt="" />
           </span>
         </div>
 
