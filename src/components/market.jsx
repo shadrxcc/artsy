@@ -19,15 +19,15 @@ const Market = () => {
           <img src={search} className="absolute" alt="" />
         </div>
 
-        <div className="flex bg-white shadow-md p-[16px] max-[280px]:w-[260px] w-[370px] md:w-[913px] rounded-[15px] items-center justify-between">
+        <div className="flex bg-white shadow-md p-[16px] max-[280px]:w-[260px] w-[370px] md:w-[495px] lg:w-[913px] rounded-[15px] items-center justify-between">
           <div>
             <select className="text-2xl md:hidden font-medium leading-[38px]">
               <option disabled selected value="sort">
                 Filter
               </option>
-              <option value="option1">Option 1</option>
-              <option value="option2">Option 2</option>
-              <option value="option3">Option 3</option>
+              <option className="text-sm" value="option1">Option 1</option>
+              <option className="text-sm" value="option2">Option 2</option>
+              <option className="text-sm" value="option3">Option 3</option>
             </select>
             <p className="text-2xl hidden md:block leading-[38px]">
             See 1-6 of {productsdata.length} results
@@ -37,12 +37,12 @@ const Market = () => {
 
           <div>
             <select className="text-2xl font-medium leading-[38px]">
-              <option disabled selected value="sort">
+              <option  className="text-sm" disabled selected value="sort">
                 Sort
               </option>
-              <option value="option1">Option 1</option>
-              <option value="option2">Option 2</option>
-              <option value="option3">Option 3</option>
+              <option className="text-sm" value="option1">Option 1</option>
+              <option className="text-sm" value="option2">Option 2</option>
+              <option className="text-sm" value="option3">Option 3</option>
             </select>
           </div>
         </div>

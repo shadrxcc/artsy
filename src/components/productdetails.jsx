@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useParams } from "react-router";
 import { productsdata } from "./data";
 import increase from "../assets/increase.svg";
@@ -15,11 +15,28 @@ import {
 } from "@chakra-ui/react";
 import left from "../assets/slider-left-arrow.svg";
 import right from "../assets/slider-right-arrow.svg";
+import like from "../assets/heart.svg";
+import { Link } from "react-router-dom";
 
 const Productdetails = () => {
   const theme = createTheme();
   const { id } = useParams();
   const [itemNo, setItemNo] = useState(0);
+  const containerRef = useRef(null);
+
+  const scrollLeft = () => {
+    containerRef.current.scrollBy({
+      left: -200,
+      behavior: "smooth"
+    })
+  }
+
+  const scrollRight = () => {
+    containerRef.current.scrollBy({
+      left: 200,
+      behavior: "smooth"
+    })
+  }
 
   const decreaseNo = () => {
     if (itemNo > 0) {
@@ -34,7 +51,11 @@ const Productdetails = () => {
   const data = productsdata.find((product) => product.id == id);
   const [targetData, setTargetData] = useState(data);
 
-  const collection = productsdata.filter((product) => product.type == targetData.type)
+  const collection = productsdata.filter(
+    (product) => product.type == targetData.type && product.id !== targetData.id
+  );
+
+  
   const [collectionData, setCollectionData] = useState(collection);
 
   return (
@@ -83,7 +104,7 @@ const Productdetails = () => {
             </div>
           </div>
           <div className="pt-10 md:pt-0">
-            <Accordion className="md:w-[400px] lg:w-[560px]" allowToggle>
+            <Accordion className="md:w-[400px] lg:w-[450px]" allowToggle>
               <div className="p-3 border-[1px] border-b-0 border-x-0 border-black">
                 <AccordionItem className="border-none">
                   <h2>
@@ -115,7 +136,7 @@ const Productdetails = () => {
                         flex="1"
                         textAlign="left"
                       >
-                        Status
+                        Listings
                       </Box>
                       <AccordionIcon />
                     </AccordionButton>
@@ -156,13 +177,44 @@ const Productdetails = () => {
             Explore more from this collection
           </p>
           <span className="flex gap-x-9">
-            <img src={left} className="w-16" alt="" />
-            <img src={right} className="w-16" alt="" />
+            <img onClick={scrollLeft} src={left} className="w-16" alt="" />
+            <img onClick={scrollRight} src={right} className="w-16" alt="" />
           </span>
         </div>
 
-        <div>
-          
+        <div className="pt-12">
+          <div
+            ref={containerRef}
+            className="overflow-x-scroll whitespace-nowrap hide-scrollbar"
+          >
+            {collectionData.map((collection) => {
+              return (
+                <Link
+                  to={`/product-details/${collection.id}`}
+                  key={collection.id}
+                >
+                  <div className="inline-block p-9 border-[1px] border-black mr-[40px]">
+                    <div className="flex flex-col">
+                      <div>
+                        {" "}
+                        <img
+                          src={like}
+                          className="w-[53px] float-right"
+                          alt=""
+                        />
+                      </div>
+
+                      <img src={collection.img} className="w-[15em]" alt="" />
+                      <span className="flex justify-between">
+                        <p className="text-32 font-bold">{collection.name}</p>
+                        <p className="text-32 font-bold">${collection.price}</p>
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>
