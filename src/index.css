@@ -88,3 +88,6 @@ span.MuiSlider-root.MuiSlider-colorPrimary.MuiSlider-sizeMedium.css-187mznn-MuiS
   width: 244px;
 }
 
+.details-img {
+  background: url(/src/assets/boolean-egypt.svg);
+}

@@ -18,6 +18,17 @@ import veil from '../assets/veil.svg'
 import alternate from '../assets/alternating.svg'
 import rose from '../assets/rosemary.svg'
 import beverly from '../assets/beverly.svg'
+import road from '../assets/road.svg'
+
+import philodeet from '../assets/philomena-details.svg'
+import egyptdeet from '../assets/boolean-egypt-details.svg'
+import blancdeet from '../assets/blanc-details.svg'
+import ellipsiadeet from '../assets/elypsia-details.svg'
+import lawmakersdeet from '../assets/lawmakers-details.svg'
+import veildeet from '../assets/veil-details.svg'
+import alternatedeet from '../assets/alternating-details.svg'
+import rosedeet from '../assets/rosemary-details.svg'
+import beverlydeet from '../assets/beverly-details.svg'
 
 var idn = uuid();
 
@@ -141,6 +152,7 @@ export const productsdata = [
     price: 3.90,
     creator: "Lisa Frank",
     img: philo,
+    detailsimg: philodeet,
     type: "Optics",
     madeIn: "Italy",
     views: 121,
@@ -158,6 +170,7 @@ export const productsdata = [
     price: 150.0,
     creator: "Lola Oge",
     img: egypt,
+    detailsimg: egyptdeet,
     type: "Fashion",
     madeIn: "Egypt",
     views: 730,
@@ -175,6 +188,7 @@ export const productsdata = [
     price: 39.0,
     creator: "Shawn Brights",
     img: blanc,
+    detailsimg: blancdeet,
     type: "Fashion",
     madeIn: "Austria",
     views: 340,
@@ -192,6 +206,7 @@ export const productsdata = [
     price: 234.0,
     creator: "Ali Dawa",
     img: ellipsia,
+    detailsimg: ellipsiadeet,
     type: "Optics",
     madeIn: "Egypt",
     views: 11,
@@ -209,6 +224,7 @@ export const productsdata = [
     price: 212.0,
     creator: "Ali Dawa",
     img: lawmakers,
+    detailsimg: lawmakersdeet,
     type: "Editorials",
     madeIn: "Italy",
     views: 21,
@@ -226,6 +242,7 @@ export const productsdata = [
     price: 64.0,
     img: veil,
     type: "Fashion",
+    detailsimg: veil,
     madeIn: "Nigeria",
     views: 59,
     description:
@@ -243,6 +260,7 @@ export const productsdata = [
     price: 64.0,
     img: alternate,
     type: "Optics",
+    detailsimg: alternatedeet,
     madeIn: "Nigeria",
     views: 59,
     description:
@@ -260,6 +278,7 @@ export const productsdata = [
     price: 64.0,
     img: rose,
     type: "Fashion",
+    detailsimg: rosedeet,
     madeIn: "Nigeria",
     views: 59,
     description:
@@ -277,6 +296,25 @@ export const productsdata = [
     price: 64.0,
     img: beverly,
     type: "Nature",
+    detailsimg: beverlydeet,
+    madeIn: "Nigeria",
+    views: 59,
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    listing:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    status:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    feautured: false,
+  },
+
+  {
+    id: 10,
+    name: "ROAD TO EGYPT",
+    price: 64.0,
+    img: road,
+    type: "Art & Museum",
+    detailsimg: beverlydeet,
     madeIn: "Nigeria",
     views: 59,
     description:

@@ -24,7 +24,9 @@ const Header = () => {
           <img onClick={openToggle} src={hamburger} alt="" />
         </div>
         <div className="m-auto md:m-0">
-          <img className="w-[5em] md:w-[6em]" src={artsylogo} alt="logo" />
+          <Link to={"/"}>
+            <img className="w-[5em] md:w-[6em]" src={artsylogo} alt="logo" />
+          </Link>
         </div>
 
         <div>
@@ -57,7 +59,9 @@ const Header = () => {
         } md:hidden active-menu bg-white py-[24px] z-10 px-[30px] top-0 left-[-60em] flex flex-col gap-y-[50px] absolute h-5/6 w-full`}
       >
         <div className="flex justify-between">
-          <img className="w-[5em]" src={artsylogo} alt="logo" />
+          <Link to={"/"}>
+            <img className="w-[5em]" src={artsylogo} alt="logo" />
+          </Link>
           <img onClick={closeToggle} src={close} alt="" />
         </div>
 

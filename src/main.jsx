@@ -3,10 +3,16 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import RouteSwitch from "./RouteSwitch.jsx";
 import { BrowserRouter } from "react-router-dom";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+
+const theme = extendTheme({
+  fonts: {
+    body: "Satoshi-Variable",
+  },
+});
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <ChakraProvider>
+  <ChakraProvider theme={theme}>
     <BrowserRouter>
       <React.StrictMode>
         <RouteSwitch />
