@@ -7,6 +7,7 @@ import Marketplace from "./pages/marketplace";
 import Productdetails from "./components/productdetails";
 import ScrollToTop from "./ScrollToTop";
 import Auction from "./pages/auction";
+import Drops from "./pages/drops";
 
 const RouteSwitch = () => {
   return (
@@ -19,6 +20,7 @@ const RouteSwitch = () => {
         <Route path="/market" element={<Marketplace />}></Route>
         <Route path="/auction" element={<Auction/>}></Route>
         <Route path="/product-details/:id" element={<Productdetails />}></Route>
+        <Route path="/drop" element={<Drops />}></Route>
       </Routes>
       <Footer />
     </>
