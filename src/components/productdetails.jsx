@@ -27,16 +27,16 @@ const Productdetails = () => {
   const scrollLeft = () => {
     containerRef.current.scrollBy({
       left: -200,
-      behavior: "smooth"
-    })
-  }
+      behavior: "smooth",
+    });
+  };
 
   const scrollRight = () => {
     containerRef.current.scrollBy({
       left: 200,
-      behavior: "smooth"
-    })
-  }
+      behavior: "smooth",
+    });
+  };
 
   const decreaseNo = () => {
     if (itemNo > 0) {
@@ -55,8 +55,25 @@ const Productdetails = () => {
     (product) => product.type == targetData.type && product.id !== targetData.id
   );
 
-  
   const [collectionData, setCollectionData] = useState(collection);
+
+  const collectionAvailable = () => {
+    if (collectionData.length > 0) {
+      return (
+        <div className="flex bg-white shadow items-center flex-col md:flex-row gap-y-6 p-7 rounded-2xl justify-between">
+          <p className="text-xl md:text-[32px] text-center md:text-start leading-8 font-medium">
+            Explore more from this collection
+          </p>
+          <span className="flex gap-x-9">
+            <img onClick={scrollLeft} src={left} className="w-16" alt="" />
+            <img onClick={scrollRight} src={right} className="w-16" alt="" />
+          </span>
+        </div>
+      );
+    } else {
+      return null;
+    }
+  };
 
   return (
     <div className="px-4 flex flex-col gap-y-20 md:px-10 mx-auto">
@@ -172,15 +189,7 @@ const Productdetails = () => {
       </div>
 
       <div>
-        <div className="flex bg-white shadow items-center flex-col md:flex-row gap-y-6 p-7 rounded-2xl justify-between">
-          <p className="text-xl md:text-[32px] text-center md:text-start leading-8 font-medium">
-            Explore more from this collection
-          </p>
-          <span className="flex gap-x-9">
-            <img onClick={scrollLeft} src={left} className="w-16" alt="" />
-            <img onClick={scrollRight} src={right} className="w-16" alt="" />
-          </span>
-        </div>
+        {collectionAvailable()}
 
         <div className="pt-12">
           <div
