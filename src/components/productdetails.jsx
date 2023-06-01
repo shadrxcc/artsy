@@ -76,7 +76,7 @@ const Productdetails = () => {
   };
 
   return (
-    <div className="px-4 flex flex-col gap-y-20 md:px-10 mx-auto">
+    <div className="px-6 flex flex-col gap-y-20 md:px-10 mx-auto">
       <div className="flex flex-col md:flex-row justify-center">
         <div
           className="w-full h-[50vh] md:h-auto lg:w-1/4 bg-cover bg-center bg-no-repeat"
@@ -202,7 +202,7 @@ const Productdetails = () => {
                   to={`/product-details/${collection.id}`}
                   key={collection.id}
                 >
-                  <div className="inline-block p-9 border-[1px] border-black mr-[40px]">
+                  <div className="inline-block p-6 border-[1px] border-black mr-[40px]">
                     <div className="flex flex-col">
                       <div>
                         {" "}

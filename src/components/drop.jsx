@@ -5,7 +5,7 @@ import { Statusbtn } from "./button";
 const Drop = () => {
   return (
     <div>
-      <div className="p-4 flex flex-col gap-y-12 lg:gap-y-32">
+      <div className="p-6 flex flex-col gap-y-12 lg:gap-y-32">
         {dropsdata.map((drop) => {
           const hour = Math.floor(Math.random() * 24);
           const mins = Math.floor(Math.random() * 60);

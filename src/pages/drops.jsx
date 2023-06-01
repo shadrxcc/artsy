@@ -10,7 +10,7 @@ const Drops = () => {
         <p className="text-lg lg:text-[32px] text-center w-[291px] md:w-full text-[#616161]">
           Turn on notifications so that no drops will miss you.
         </p>
-        <button className="w-[262px] lg:w-[420px] h-[52px] lg:h-[84px] bg-transparent border-[1px] border-black text-[22px] lg:text-[32px] font-medium">
+        <button className="max-[280px]:w-[215px] w-[262px] lg:w-[420px] max-[280px]:h-[45px] h-[52px] lg:h-[84px] bg-transparent border-[1px] border-black text-xl lg:text-[32px] font-medium">
           Notify me
         </button>
       </span>

@@ -16,7 +16,7 @@ const Featuredproduct = ({ image,  title, desc }) => {
           {title}
         </p>
         <button className="md:hidden absolute pb-3 pr-10 right-0 bottom-0 ">
-          <img className="max-[280px]:w-[3em]" src={button} alt="" />
+          <img className="max-[280px]:w-[2em]" src={button} alt="" />
         </button>
       </div>
 

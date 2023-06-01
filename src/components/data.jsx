@@ -1,4 +1,5 @@
 import search from "../assets/searchicon.svg";
+import searchmenu from "../assets/search-icon.svg";
 import cart from "../assets/carticon.svg";
 import { v4 as uuid } from "uuid";
 import boolean from "../assets/lady-sleep-1.png";
@@ -57,7 +58,7 @@ export const navlink = [
 
 export const icons = [
   {
-    icon: search,
+    icon: searchmenu,
   },
   {
     icon: cart,

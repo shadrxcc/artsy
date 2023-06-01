@@ -10,19 +10,19 @@ const Topbid = () => {
         <p className="text-xl lg:text-[36px] font-medium">
           Top bids from popular creators
         </p>
-        <div className="flex flex-col md:flex-row gap-x-[95px]">
+        <div className="flex flex-col gap-y-[40px] md:flex-row gap-x-[95px]">
           {auctionsdata.bids.map((bid) => {
             return (
-              <div className="flex flex-col gap-y-[20px] md:gap-y-[45px]" key={bid.id}>
+              <div className="flex flex-col gap-y-[30px] md:gap-y-[45px]" key={bid.id}>
                 <div className="bg-white rounded-[15px] shadow-md">
                   <div className="p-[12px] flex justify-end">
                     <img className="w-12" src={like} alt="" />
                   </div>
-                  <img className="w-[23em] lg:w-[26em]" src={bid.url} alt="" />
-                  <p className="text-2xl p-[30px] font-bold">{bid.name}</p>
+                  <img className="w-[23em] px-4 md:px-0 lg:w-[26em]" src={bid.url} alt="" />
+                  <p className="text-xl md:text-2xl p-[30px] font-bold">{bid.name}</p>
                 </div>
 
-                <div className="flex flex-col gap-y-[15px] md:gap-y-[30px]">
+                <div className="flex flex-col gap-y-[30px]">
                   <p className="md:text-xl font-medium text-[#616161]">
                     Creator:{" "}
                     <span className="text-xl text-[#333333] font-bold">
@@ -46,7 +46,7 @@ const Topbid = () => {
                       </p>
                     </span>
 
-                    <button className="bg-[#3341C1] rounded-[3px] text-white text-xl max-[280px]:w-[115px] w-[157px] h-[46px] lg:w-[247px] lg:h-[73px]">
+                    <button className="bg-[#3341C1] rounded-[3px] text-white text-base md:text-xl max-[280px]:w-[115px] w-[157px] h-[46px] lg:w-[247px] lg:h-[73px]">
                       Place bid
                     </button>
                   </div>

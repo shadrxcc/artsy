@@ -7,7 +7,7 @@ export const dropsdata = [
   {
     id: "1",
     title: "Eyo: Eko for show",
-    creator: "aliya minat",
+    creator: "Aliya Minat",
     date: "November 21 at 11am WAT",
     url: drop1,
     status: "UPCOMING",
