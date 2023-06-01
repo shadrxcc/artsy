@@ -19,13 +19,13 @@ const Topbid = () => {
                     <img className="w-12" src={like} alt="" />
                   </div>
                   <img className="w-[23em] px-4 md:px-0 lg:w-[26em]" src={bid.url} alt="" />
-                  <p className="text-xl md:text-2xl p-[30px] font-bold">{bid.name}</p>
+                  <p className="text-lg md:text-2xl p-[30px] font-bold">{bid.name}</p>
                 </div>
 
                 <div className="flex flex-col gap-y-[30px]">
-                  <p className="md:text-xl font-medium text-[#616161]">
+                  <p className="md:text-xl text-base font-medium text-[#616161]">
                     Creator:{" "}
-                    <span className="text-xl text-[#333333] font-bold">
+                    <span className=" text-[#333333] font-bold">
                       {bid.creator}
                     </span>
                   </p>
