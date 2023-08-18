@@ -10,7 +10,7 @@ const Footer = () => {
         <p className="bask md:text-3xl text-2xl uppercase leading-[39px]">
           NewsLetter
         </p>
-        <p className="md:text-[32px] text-[11px] md:text-center lg:text-start leading-[16px] md:leading-[43px]">
+        <p className="md:text-2xl text-[11px] md:text-center lg:text-start leading-[16px] md:leading-[43px]">
           SUBSCRIBE TO OUR DAILY UPDATES AND NEWSLETTERS
         </p>
         <span className="flex flex-col md:flex-row gap-[23px]">
@@ -34,7 +34,7 @@ const Footer = () => {
 
         <div className="md:flex hidden gap-x-[135px]">
           <div>
-            <ul className="text-[26px] flex flex-col gap-y-[33px] text-[#333333] leading-[35px]">
+            <ul className="text-xl flex flex-col gap-y-[33px] text-[#333333] leading-[35px]">
               <li>Home</li>
               <li>Marketplace</li>
               <li>Auctions</li>
@@ -43,7 +43,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <ul className="text-[26px] flex flex-col gap-y-[33px] text-[#333333] leading-[35px]">
+            <ul className="text-xl flex flex-col gap-y-[33px] text-[#333333] leading-[35px]">
               <li>Blog</li>
               <li>Wallets</li>
               <li>Rates</li>
@@ -55,15 +55,15 @@ const Footer = () => {
         <div className="flex flex-col gap-y-[40px]">
           <p className="text-[11px] md:hidden leading-[17px] text-[#333333]">REACH US</p>
           <span className="flex gap-[13px] items-center">
-            <img className="w-[24px] md:w-[81px]" src={mail} alt="" />{" "}
-            <p className="text-[#333333] text-[11px] md:text-[36px] leading-[16px] md:leading-[35px]">
+            <img className="w-[24px] md:w-[40px]" src={mail} alt="" />{" "}
+            <p className="text-[#333333] text-[11px] md:text-xl leading-[16px] md:leading-[35px]">
               artsystudios@gmail.com
             </p>
           </span>
 
           <span className="flex gap-[13px] items-center">
-            <img className="w-[24px] md:w-[81px]" src={location} alt="" />{" "}
-            <p className="text-[#333333] text-[11px] md:text-[36px] leading-[16px] md:leading-[35px]">
+            <img className="w-[24px] md:w-[40px]" src={location} alt="" />{" "}
+            <p className="text-[#333333] text-[11px] md:text-xl leading-[16px] md:leading-[35px]">
               Lagos, Nigeria.
             </p>
           </span>

@@ -21,15 +21,15 @@ const Featuredproduct = ({ image,  title, desc }) => {
       </div>
 
       <div className="flex flex-col gap-y-5">
-        <h3 className="stix text-[40px] hidden md:block leading-[50px] font-bold">
+        <h3 className="stix text-3xl hidden md:block leading-[50px] font-bold">
           {title}
         </h3>
-        <p className="md:text-[1.2em] lg:text-2xl text-[15px] md:w-[479px] lg:w-[540px] leading-[23px] md:leading-8 text-[#616161]">
+        <p className="md:text-[1.2em] lg:text-xl text-[15px] md:w-[479px] lg:w-[540px] leading-[23px] md:leading-8 text-[#616161]">
           {desc}
         </p>
         <span className="flex items-center">
           <Creators64 />
-          <p className="font-medium pl-4 pr-8 text-[.94rem] leading-5 md:text-[1.2em] lg:text-2xl md:leading-8 text-[#333333]">
+          <p className="font-medium pl-4 pr-8 text-[.94rem] leading-5 md:text-[1.2em] lg:text-xl md:leading-8 text-[#333333]">
             64 major creators
           </p>
           <button className="hidden md:block">

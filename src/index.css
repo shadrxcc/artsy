@@ -45,9 +45,13 @@ body {
   font-family: Satoshi-Variable;
 }
 
+#menu {
+  transition: all 0.5s ease-in-out;
+}
+
 #menu.active {
   left: 0;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
   height: 100vh;
 }
 
@@ -98,4 +102,8 @@ span.MuiSlider-root.MuiSlider-colorPrimary.MuiSlider-sizeMedium.css-187mznn-MuiS
   &::-webkit-scrollbar {
     display: none; /* Chrome, Safari, and Opera */
   }
+}
+
+#views {
+  background: rgba(255, 255, 255, 0.4);
 }

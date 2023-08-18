@@ -23,7 +23,7 @@ const Drop = () => {
                   {drop.status}
                 </button>
                 <div className="absolute max-[280px]:w-[220px] p-4 md:p-0 max-[280px]:h-[50px] w-[305px] gap-y-[7px] md:w-[325px] lg:w-[340px] rounded-lg flex flex-col justify-center md:items-center mb-4 md:mb-[2em] m-auto h-[85px] bg-timestamp left-0 right-0 bottom-0">
-                  <p className="text-base lg:text-[28px]">Time remaining</p>
+                  <p className="text-base text-white lg:text-2xl">Time remaining</p>
                   <p className="stix text-xl lg:text-4xl text-white">
                     {hour}hr : {mins}mins: {sec}s
                   </p>

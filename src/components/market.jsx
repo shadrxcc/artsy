@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import Filterpanel from "./filterpanel";
 import { productsdata } from "./data";
 import search from "../assets/searchicon.svg";
 import { Link } from "react-router-dom";
 
 const Market = () => {
+  const [sort, setSort] = useState('sort')
+
+  const sortProducts = (option) => {
+    switch (option) {
+
+      case 'Views':
+        return productsdata.sort((a, b) => a.views - b.views);
+      case 'Price':
+        return productsdata.sort((a, b) => a.price - b.price);
+      case 'Type':
+        return productsdata.sort((a, b) => a.type.localeCompare(b.type));
+      default:
+        return productsdata;
+    }
+  }
+
+  const sortedProducts = sortProducts(sort)
+  
   return (
     <div className="flex flex-col gap-y-[70px]">
       <div className="flex justify-evenly items-center">
@@ -12,14 +30,14 @@ const Market = () => {
           <input
             type="text"
             name="search"
-            className="text-2xl pl-14 w-[215px] rounded-[15px] py-[14px] bg-[#F4F2F2] outline-none leading-[32px] text-[#999999] font-medium"
+            className="text-xl pl-14 w-[215px] rounded-[15px] py-[14px] bg-[#F4F2F2] outline-none leading-[32px] text-[#999999] font-medium"
             id="seacrh"
             placeholder="Search"
           />
-          <img src={search} className="absolute" alt="" />
+          <img src={search} className="absolute w-[40px]" alt="" />
         </div>
 
-        <div className="flex bg-white shadow-md p-[16px] max-[280px]:w-[260px] w-[370px] md:w-[495px] lg:w-[913px] rounded-[15px] items-center justify-between">
+        <div className="flex bg-white shadow-md p-2.5 max-[280px]:w-[260px] w-[370px] md:w-[495px] lg:w-[913px] rounded-[15px] items-center justify-between">
           <div>
             <select className="text-2xl md:hidden font-medium leading-[38px]">
               <option disabled selected value="sort">
@@ -29,20 +47,21 @@ const Market = () => {
               <option className="text-sm" value="option2">Option 2</option>
               <option className="text-sm" value="option3">Option 3</option>
             </select>
-            <p className="text-2xl hidden md:block leading-[38px]">
+            <p className="text-xl hidden md:block leading-[38px]">
             See 1-6 of {productsdata.length} results
           </p>
           </div>
          
 
           <div>
-            <select className="text-2xl font-medium leading-[38px]">
-              <option  className="text-sm" disabled selected value="sort">
+            <select className="font-medium leading-[38px]" value={sort}
+          onChange={(e) => setSort(e.target.value)}>
+              <option  className="text-lg" disabled selected value="sort">
                 Sort
               </option>
-              <option className="text-sm" value="option1">Option 1</option>
-              <option className="text-sm" value="option2">Option 2</option>
-              <option className="text-sm" value="option3">Option 3</option>
+              <option className="text-lg" value="Views">Views</option>
+              <option className="text-lg" value="Price">Price</option>
+              <option className="text-lg" value="Type">Type</option>
             </select>
           </div>
         </div>
@@ -50,7 +69,7 @@ const Market = () => {
       <div className="flex justify-evenly">
         <Filterpanel />
         <div className="grid md:grid-cols-2 gap-x-[10px] xl:gap-x-[40px] gap-y-[20px] lg:grid-cols-3">
-          {productsdata.map((product) => {
+          {sortedProducts.map((product) => {
             return (
               <Link key={product.id} to={`/product-details/${product.id}`}>
                 <div className="md:bg-white hover:scale-100 flex gap-y-[10px] rounded-[15px] md:shadow-lg flex-col px-[14px] py-[20px] md:w-[230px] xl:w-[269px]">
@@ -60,10 +79,10 @@ const Market = () => {
                     alt=""
                   />
                   <span className="flex items-center justify-between md:items-start md:flex-col gap-y-[18px]">
-                    <p className="text-base font-medium md:text-xl leading-9 text-[#333333]">
+                    <p className="text-base font-medium leading-9 text-[#333333]">
                       {product.name}
                     </p>
-                    <p className="text-base md:text-[28px] font-medium md:font-bold leading-10 text-[#333333]">
+                    <p className="text-base md:text-lg font-medium md:font-bold leading-10 text-[#333333]">
                       ${product.price}
                     </p>
                   </span>
