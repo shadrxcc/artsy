@@ -1,13 +1,23 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import artsylogo from "../assets/ARTSY..svg";
 import { icons, navlink } from "./data";
 import hamburger from "../assets/hamburger.svg";
 import close from "../assets/x.svg";
 import chat from "../assets/chat.svg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import searchmenu from "../assets/search-icon.svg";
+import cart from "../assets/cart.svg";
+import { CartContext } from "../context/cartcontext";
 
 const Header = () => {
   const [openmenu, setOpenMenu] = useState(false);
+  const location = useLocation()
+
+  const cartctx = useContext(CartContext);
+
+  const numberofitems = cartctx.items.reduce((current, item) => {
+    return current + item.amount;
+  }, 0);
 
   const openToggle = () => {
     setOpenMenu(!openmenu);
@@ -35,7 +45,7 @@ const Header = () => {
               return (
                 <>
                   <Link to={link.nav} key={link.id}>
-                    <li className="text-[#292929] text-base leading-[32px] font-[500] hover:underline">
+                    <li key={link.id} id={`${location.pathname === link.nav ? 'active-link' : ''}`} className={`text-[#292929] text-base leading-[32px] font-[500]`}>
                       {link.link}
                     </li>
                   </Link>
@@ -45,10 +55,16 @@ const Header = () => {
           </ul>
         </div>
 
-        <div className="flex gap-x-[11px]">
-          {icons.map((icon) => {
-            return <img className="w-[2em]" src={icon.icon} alt="" />;
-          })}
+        <div className="flex items-center gap-x-[11px]">
+          <img className={`w-[2em]`} src={searchmenu} alt="" />
+          <Link to={`/checkout`}>
+            <div className="flex">
+              <img className={`w-[1.4em]`} src={cart} alt="" />
+              <p className="text-[10px] text-white px-1.5 h-fit rounded-full bg-red-600">
+                {numberofitems}
+              </p>
+            </div>
+          </Link>
         </div>
       </div>
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { dropsdata } from "./dropdata";
 import { Statusbtn } from "./button";
+import { Link } from "react-router-dom";
 
 const Drop = () => {
   return (
@@ -10,6 +11,9 @@ const Drop = () => {
           const hour = Math.floor(Math.random() * 24);
           const mins = Math.floor(Math.random() * 60);
           const sec = Math.floor(Math.random() * 60);
+
+         
+        
           return (
             <div
               className="flex flex-col md:flex-row justify-center items-center gap-y-[30px] md:gap-x-4 lg:gap-x-10"
@@ -17,13 +21,15 @@ const Drop = () => {
             >
               <div className="relative">
                 <img className="md:w-[30em]" src={drop.url} alt="" />
-                <button
-                  className={`w-[103px] md:hidden top-0 right-0 m-3 absolute text-[12px] font-medium text-white rounded-[10px] h-[35px] bg-[${drop.btncolor}]`}
+                <button id={drop.status}
+                  className={`w-[103px] md:hidden top-0 right-0 m-3 absolute text-[12px] font-medium text-white rounded-[10px] h-[35px]`}
                 >
                   {drop.status}
                 </button>
                 <div className="absolute max-[280px]:w-[220px] p-4 md:p-0 max-[280px]:h-[50px] w-[305px] gap-y-[7px] md:w-[325px] lg:w-[340px] rounded-lg flex flex-col justify-center md:items-center mb-4 md:mb-[2em] m-auto h-[85px] bg-timestamp left-0 right-0 bottom-0">
-                  <p className="text-base text-white lg:text-2xl">Time remaining</p>
+                  <p className="text-base text-white lg:text-2xl">
+                    Time remaining
+                  </p>
                   <p className="stix text-xl lg:text-4xl text-white">
                     {hour}hr : {mins}mins: {sec}s
                   </p>
@@ -31,8 +37,8 @@ const Drop = () => {
               </div>
 
               <div className="flex flex-col gap-y-2">
-                <button
-                  className={`w-[189px] hidden md:block text-lg font-medium text-white rounded-[10px] h-[43px] bg-[${drop.btncolor}]`}
+                <button id={drop.status}
+                  className={`w-[189px] hidden md:block text-lg font-medium text-white rounded-[10px] h-[43px]`}
                 >
                   {drop.status}
                 </button>
@@ -46,9 +52,9 @@ const Drop = () => {
                   Creator:{" "}
                   <span className="text-[#006CA2]">{drop.creator}</span>
                 </p>
-                <a href="#" className="text-[#006CA2] underline">
-                  {drop.action}
-                </a>
+                <Link to={`${drop.actionlink}/${drop.id}`}>
+                  <p className="text-[#006CA2] underline">{drop.action}</p>
+                </Link>
               </div>
             </div>
           );

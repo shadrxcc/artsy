@@ -57,19 +57,22 @@ const Filterpanel = (props) => {
               </AccordionButton>
             </h2>
             <AccordionPanel className="flex flex-col" pb={4}>
-              <Checkbox className="text-[#292929] text-2xl leading-8">
+            <Checkbox isChecked={props.category === "All"} onChange={() => props.setCategory("All")} className="text-[#292929] text-2xl leading-8">
+               All
+              </Checkbox>
+              <Checkbox isChecked={props.category === "Editorials"} onChange={() => props.setCategory("Editorials")} className="text-[#292929] text-2xl leading-8">
                 Editorials
               </Checkbox>
-              <Checkbox className="text-[#292929] text-2xl leading-8">
+              <Checkbox isChecked={props.category === "Fashion"} onChange={() => props.setCategory("Fashion")} className="text-[#292929] text-2xl leading-8">
                 Fashion
               </Checkbox>
-              <Checkbox className="text-[#292929] text-2xl leading-8">
+              <Checkbox isChecked={props.category === "Optics"} onChange={() => props.setCategory("Optics")} className="text-[#292929] text-2xl leading-8">
                 Optics
               </Checkbox>
-              <Checkbox className="text-[#292929] text-2xl leading-8">
+              <Checkbox isChecked={props.category === "Art & Museum"} onChange={() => props.setCategory("Art & Museum")} className="text-[#292929] text-2xl leading-8">
                 Art & Museum
               </Checkbox>
-              <Checkbox className="text-[#292929] text-2xl leading-8">
+              <Checkbox isChecked={props.category === "Nature"} onChange={() => props.setCategory("Nature")} className="text-[#292929] text-2xl leading-8">
                 Nature
               </Checkbox>
             </AccordionPanel>
@@ -92,16 +95,16 @@ const Filterpanel = (props) => {
               </AccordionButton>
             </h2>
             <AccordionPanel className="flex flex-col" pb={4}>
-              <Checkbox className="text-[#292929] text-2xl leading-8">
+              <Checkbox  isChecked={props.price === "All"} onChange={() => props.setPrice("All")} className="text-[#292929] text-2xl leading-8">
                 All
               </Checkbox>
-              <Checkbox className="text-[#292929] text-2xl leading-8">
+              <Checkbox isChecked={props.price === "Below $100.00"} onChange={() => props.setPrice("Below $100.00")} className="text-[#292929] text-2xl leading-8">
                 Below $100.00
               </Checkbox>
-              <Checkbox className="text-[#292929] text-2xl leading-8">
+              <Checkbox isChecked={props.price === "$100.00 - $150.00"} onChange={() => props.setPrice("$100.00 - $150.00")} className="text-[#292929] text-2xl leading-8">
                 $100.00 - $150.00
               </Checkbox>
-              <Checkbox className="text-[#292929] text-2xl leading-8">
+              <Checkbox isChecked={props.price === "$150.00 - $200.00"} onChange={() => props.setPrice("$150.00 - $200.00")} className="text-[#292929] text-2xl leading-8">
                 $150.00 - $200.00
               </Checkbox>
               <Checkbox className="text-[#292929] text-2xl leading-8">
@@ -111,7 +114,7 @@ const Filterpanel = (props) => {
           </AccordionItem>
         </Accordion>
 
-        <Accordion className="w-[244px]" defaultIndex={[0]} allowMultiple>
+        {/* <Accordion className="w-[244px]" defaultIndex={[0]} allowMultiple>
           <AccordionItem className="border-none">
             <h2>
               <AccordionButton className="bg-none">
@@ -141,7 +144,7 @@ const Filterpanel = (props) => {
               </Box>
             </AccordionPanel>
           </AccordionItem>
-        </Accordion>
+        </Accordion> */}
       </div>
     </div>
   );

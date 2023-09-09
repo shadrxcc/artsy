@@ -10,7 +10,7 @@ import add from "../assets/addwallet.svg";
 import connect from "../assets/WalletConnectmobile.svg";
 import base from "../assets/Coinbasemobile.svg";
 
-const Paymentdetails = () => {
+const Paymentdetails = (props) => {
   return (
     <div className="pt-[70px]">
       <div className="text-[#616161] flex flex-col gap-y-10 px-4 md:px-8 lg:px-[100px] w-fit m-auto">
@@ -105,7 +105,7 @@ const Paymentdetails = () => {
                 </label>
               </div>
             </section>
-            <button class="bg-blue h-[3.5rem] px-8 text-xl mb-5 font-medium text-white block mt-10 w-[80%] mx-auto md:w-full">
+            <button class="bg-[#3341C1] h-[3.5rem] rounded px-8 text-xl mb-5 font-medium text-white block mt-10 w-[80%] mx-auto md:w-full">
               Confirm
             </button>
           </form>
@@ -128,15 +128,19 @@ const Paymentdetails = () => {
             <article class="text-lg flex flex-col mt-8 gap-6 leading-[100%]">
               <p class="text-grey-light flex">
                 <span>Products in cart :</span>{" "}
-                <span class="text-grey-dark ml-auto">1 item</span>
+                <span class="text-grey-dark ml-auto">{props.numberofitems} item(s)</span>
               </p>
               <p class="text-grey-light flex">
                 <span>Shipping :</span>{" "}
-                <span class="text-grey-dark ml-auto">$3.55</span>
+                <span class="text-grey-dark ml-auto">${props.shipping}</span>
               </p>
               <p class="text-grey-light flex">
                 <span>Total :</span>{" "}
-                <span class="text-grey-dark ml-auto">$39.05</span>
+                <span class="text-grey-dark ml-auto">${props.total}</span>
+              </p>
+              <p class="text-grey-light flex">
+                <span>Grand total :</span>{" "}
+                <span class="text-grey-dark ml-auto">${props.grandtotal}</span>
               </p>
             </article>
           </aside>

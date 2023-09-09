@@ -4,6 +4,8 @@ import "./index.css";
 import RouteSwitch from "./RouteSwitch.jsx";
 import { BrowserRouter } from "react-router-dom";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { CartContext } from "./context/cartcontext";
+import Cartprovider from "./context/cartprovider";
 
 const theme = extendTheme({
   fonts: {
@@ -15,7 +17,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <ChakraProvider theme={theme}>
     <BrowserRouter>
       <React.StrictMode>
-        <RouteSwitch />
+        <Cartprovider>
+          <RouteSwitch />
+        </Cartprovider>
       </React.StrictMode>
     </BrowserRouter>
   </ChakraProvider>

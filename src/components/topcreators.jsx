@@ -24,7 +24,7 @@ const Topcreators = () => {
       .to(creator2, { opacity: 0, duration: 1 })
       .fromTo(creator3, { opacity: 0 }, { opacity: 1, duration: 3 })
       .to(creator3, { opacity: 0, duration: 1 });
-  });
+  }, []);
 
   return (
     <div className="flex flex-col relative h-[351px] md:h-[922px] p-[5px] md:p-[80px] bg-[#E2E2E2] gap-y-[36px]">

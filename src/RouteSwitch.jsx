@@ -71,7 +71,7 @@ const RouteSwitch = () => {
           </DefaultLayout>
         }
       ></Route>
-      <Route path="/livebid" element={<Bid />}></Route>
+      <Route path="/livebid/:id" element={<Bid />}></Route>
     </Routes>
   );
 };

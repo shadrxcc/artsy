@@ -1,6 +1,6 @@
 import search from "../assets/searchicon.svg";
 import searchmenu from "../assets/search-icon.svg";
-import cart from "../assets/carticon.svg";
+import cart from "../assets/cart.svg";
 import { v4 as uuid } from "uuid";
 import boolean from "../assets/lady-sleep-1.png";
 import feature2 from "../assets/egyptian-desktop.png";
@@ -59,9 +59,11 @@ export const navlink = [
 export const icons = [
   {
     icon: searchmenu,
+    width: '2em'
   },
   {
     icon: cart,
+    width: '1.4em'
   },
   // {
   //     icon: notification

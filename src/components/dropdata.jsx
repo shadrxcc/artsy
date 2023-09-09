@@ -35,7 +35,8 @@ export const dropsdata = [
     status: "LIVE",
     btncolor: "#3EA03B",
     desc: "In this powerful and striking piece, a lone hand emerges from tumultuous waves, seeking help or salvation. It conveys a sense of desperation and vulnerability with intricate detail.",
-    action: 'Join now'
+    action: 'Join now',
+    actionlink: `/livebid`
 },
   {
     id: "4",

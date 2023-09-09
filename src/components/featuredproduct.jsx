@@ -6,7 +6,7 @@ import { Creators64 } from "./creators";
 // https://gist.githubusercontent.com/eniiku/65a95533de1f005eee35d5eb91f3e141/raw/c7188e070a8670a86883ff57224dcad277814761/products.json
 const Featuredproduct = ({ image,  title, desc }) => {
   return (
-    <div className="flex flex-col py-[60px] border-t-2 border-[#333333] gap-8 justify-center md:items-center md:flex-row">
+    <div className="flex flex-col py-[60px] border-t-2 border-[#333333] gap-8 md:items-center md:flex-row">
       
       <div
         className="flex relative h-[305px] bg-cover md:w-[610px] bg-gray-700 bg-blend-overlay bg-center text-white text-center pt-10 text-4xl font-clash md:bg-transparent justify-center md:block"

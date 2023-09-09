@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
 import { useParams } from "react-router";
 import { productsdata } from "./data";
 import increase from "../assets/increase.svg";
@@ -17,11 +17,12 @@ import left from "../assets/slider-left-arrow.svg";
 import right from "../assets/slider-right-arrow.svg";
 import like from "../assets/heart.svg";
 import { Link } from "react-router-dom";
+import { CartContext } from "../context/cartcontext";
 
 const Productdetails = () => {
   const theme = createTheme();
   const { id } = useParams();
-  const [itemNo, setItemNo] = useState(0);
+  const [itemNo, setItemNo] = useState(1);
   const containerRef = useRef(null);
 
   const scrollLeft = () => {
@@ -47,6 +48,7 @@ const Productdetails = () => {
   const increaseNo = () => {
     setItemNo(itemNo + 1);
   };
+  
 
   const data = productsdata.find((product) => product.id == id);
   const [targetData, setTargetData] = useState(data);
@@ -55,7 +57,21 @@ const Productdetails = () => {
     (product) => product.type == targetData.type && product.id !== targetData.id
   );
 
+  const cartcontext = useContext(CartContext);
+
   const [collectionData, setCollectionData] = useState(collection);
+
+  const onAddToCart = () => {
+    cartcontext.addItem({
+      id: targetData.id,
+      amount: itemNo,
+      price: targetData.price,
+      creator: targetData.creator,
+      name: targetData.name,
+      image: targetData.img,
+      category: targetData.type
+    });
+  };
 
   const collectionAvailable = () => {
     if (collectionData.length > 0) {
@@ -114,7 +130,10 @@ const Productdetails = () => {
               </div>
             </div>
             <div className="flex gap-x-6">
-              <button className="text-base md: after:text-[26px] leading-[31px] font-medium bg-[#3341C1] w-[214px] h-[58px] rounded text-white">
+              <button
+                onClick={onAddToCart}
+                className="text-base md: after:text-[26px] leading-[31px] font-medium bg-[#3341C1] w-[214px] h-[58px] rounded text-white"
+              >
                 Add to cart
               </button>
               <img src={fav} alt="" />
