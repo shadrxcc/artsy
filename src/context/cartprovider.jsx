@@ -26,6 +26,10 @@ const cartReducer = (state, action) => {
     } else {
       updatedItems = state.items.concat(action.item);
     }
+    localStorage.setItem(
+      "CartItems",
+      JSON.stringify({ cartitems: updatedItems })
+    );
     return {
       items: updatedItems,
       totalAmount: updatedAmount,
@@ -62,6 +66,14 @@ const cartReducer = (state, action) => {
     };
   }
 
+  if (action.type === "CLEAR_CART") {
+    return initialState;
+  }
+
+  if (action.type === "LOAD_CART") {
+    return action.items;
+  }  
+
   return initialState;
 };
 
@@ -70,20 +82,25 @@ const Cartprovider = (props) => {
 
   const addItemHandler = (item) => {
     dispatchCart({ type: "ADD", item: item });
-    localStorage.setItem("CartItems", JSON.stringify(item));
   };
+
+  // useEffect(() => {
+  //   const savedCartItems = JSON.parse(localStorage.getItem("CartItems"));
+
+  //   if (savedCartItems) {
+  //     dispatchCart({ type: "LOAD_CART", items: savedCartItems });
+  //   }
+  // }, []);
 
   const removeItemHandler = (id) => {
     dispatchCart({ type: "REMOVE", id: id });
   };
 
-  useEffect(() => {
-    const savedCartItems = localStorage.getItem("CartItems");
-    if (savedCartItems) {
-      dispatchCart(savedCartItems);
-    }
-  }, []);
+  const clearCartHandler = () => {
+    dispatchCart({ type: "CLEAR_CART" });
+  };
 
+ 
   const clearItemHandler = (id) => {
     dispatchCart({ type: "CLEAR_ITEM", id: id });
   };
@@ -94,6 +111,7 @@ const Cartprovider = (props) => {
     addItem: addItemHandler,
     removeItem: removeItemHandler,
     clearItem: clearItemHandler,
+    clearCart: clearCartHandler,
   };
 
   return (
@@ -104,50 +122,3 @@ const Cartprovider = (props) => {
 };
 
 export default Cartprovider;
-
-// if (action.type === "ADD") {
-//   const updatedTotalAmount =
-//     state.totalAmount + action.item.price * action.item.amount;
-
-//   const existingCartItemIndex = state.items.findIndex(
-//     (item) => item.id === action.item.id
-//   );
-//   const existingCartItem = state.items[existingCartItemIndex];
-//   let updatedItems;
-
-//   if (existingCartItem) {
-//     const updatedItem = {
-//       ...existingCartItem,
-//       amount: existingCartItem.amount + action.item.amount,
-//     };
-//     updatedItems = [...state.items];
-//     updatedItems[existingCartItemIndex] = updatedItem;
-//   } else {
-//     updatedItems = state.items.concat(action.item);
-//   }
-
-//   return {
-//     items: updatedItems,
-//     totalAmount: updatedTotalAmount,
-//   };
-// }
-// if (action.type === "REMOVE") {
-//   const existingCartItemIndex = state.items.findIndex(
-//     (item) => item.id === action.id
-//   );
-//   const existingItem = state.items[existingCartItemIndex];
-//   const updatedTotalAmount = state.totalAmount - existingItem.price;
-//   let updatedItems;
-//   if (existingItem.amount === 1) {
-//     updatedItems = state.items.filter((item) => item.id !== action.id);
-//   } else {
-//     const updatedItem = { ...existingItem, amount: existingItem.amount - 1 };
-//     updatedItems = [...state.items];
-//     updatedItems[existingCartItemIndex] = updatedItem;
-//   }
-
-//   return {
-//     items: updatedItems,
-//     totalAmount: updatedTotalAmount,
-//   };
-// }

@@ -6,7 +6,7 @@ import decrease from "../assets/decrease.svg";
 import { CartContext } from "../context/cartcontext";
 import { Link } from "react-router-dom";
 
-const Shoppingcartmobile = ({cartStatus, cartcontext, numberofitems, shipping, total, grandtotal}) => {
+const Shoppingcartmobile = ({cartStatus, setActivePage, navigate, cartcontext, numberofitems, shipping, total, grandtotal}) => {
   const [itemNo, setItemNo] = useState(0);
 
   const decreaseNo = (id) => {
@@ -93,7 +93,10 @@ const Shoppingcartmobile = ({cartStatus, cartcontext, numberofitems, shipping, t
           </div>
 
           <div className="flex items-center gap-y-5 flex-col">
-            <button className="text-base w-4/5 m-auto py-5 font-medium bg-[#3341C1] rounded text-white">
+            <button onClick={() => {
+              navigate('/checkout/shipping-details')
+              setActivePage('Shipping details')
+            }} className="text-base w-4/5 m-auto py-5 font-medium bg-[#3341C1] rounded text-white">
               Proceed to checkout
             </button>
             <Link to={`/market`}>

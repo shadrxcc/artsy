@@ -6,7 +6,7 @@ import decrease from "../assets/decrease.svg";
 import { CartContext } from "../context/cartcontext";
 import { Link } from "react-router-dom";
 
-const ShoppingcartDesktop = ({cartStatus, setActivePage, cartcontext, numberofitems, shipping, total, grandtotal}) => {
+const ShoppingcartDesktop = ({cartStatus, navigate, setActivePage, cartcontext, numberofitems, shipping, total, grandtotal}) => {
   const [itemNo, setItemNo] = useState(0);
 
   const decreaseNo = (id) => {
@@ -79,7 +79,9 @@ const ShoppingcartDesktop = ({cartStatus, setActivePage, cartcontext, numberofit
 
           <div className="flex gap-x-32 justify-between">
             <div className="flex gap-y-10 w-fit flex-col">
-              <button onClick={() => setActivePage('Shipping details')} className="text-xl py-8 px-[50px] lg:px-[117px] font-medium bg-[#3341C1] rounded text-white">
+              <button onClick={() => {
+                setActivePage('Shipping details')
+                navigate('/checkout/shipping-details')}} className="text-xl py-8 px-[50px] lg:px-[117px] font-medium bg-[#3341C1] rounded text-white">
                 Proceed to checkout
               </button>
               <p className="text-[#006CA2] m-auto text-xl underline">

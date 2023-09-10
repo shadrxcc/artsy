@@ -1,4 +1,4 @@
-import React,{ useState } from "react";
+import React, { useState } from "react";
 import Upcomingcard from "./upcomingcard";
 import UpcomingData from "./data";
 import { UpcomingContext } from "../context/upcomingcontext";
@@ -25,7 +25,7 @@ const Upcoming = () => {
 
   return (
     <>
-      <div className="upcoming hidden md:flex md:flex-col gap-y-[25px] py-[25px] md:px-[60px]">
+      <div className="upcoming hidden md:flex md:flex-col gap-y-[25px] py-[25px] md:px-8 xl:px-[120px]">
         <p className="text-[40px] leading-[54px] font-medium text-white">
           See Upcoming Auctions and Exhibitions
         </p>

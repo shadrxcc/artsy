@@ -6,6 +6,7 @@ import decrease from "../assets/decrease.svg";
 import { City, Country, State } from "country-state-city";
 
 const Shippingdetails = ({
+  navigate,
   setActivePage,
   cartcontext,
   numberofitems,
@@ -15,6 +16,7 @@ const Shippingdetails = ({
 }) => {
   const [itemNo, setItemNo] = useState(0);
 
+  const [name, setName] = useState("");
   const [mail, setMail] = useState("");
   const [number, setNumber] = useState("");
   const [postal, setPostal] = useState("");
@@ -50,7 +52,10 @@ const Shippingdetails = ({
 
   const proceedPayment = (e) => {
     e.preventDefault();
+    localStorage.setItem("Name", name);
     setActivePage("Payment details");
+    navigate(`/checkout/payment-details`);
+    
   };
 
   return (
@@ -64,13 +69,15 @@ const Shippingdetails = ({
               <input
                 required
                 type="text"
+                value={mail}
+                onChange={(e) => setMail(e.target.value)}
                 className=" rounded-[10px] px-2.5 py-5 border"
                 name="email"
                 id="email"
                 placeholder="aanuoluwateenah@gmail.com"
               />
             </span>{" "}
-            <span className="flex gap-x-3 items-center">
+            <span className="flex gap-x-3 items-baseline md:items-center">
               <input required type="checkbox" name="" id="" />{" "}
               <p className="text-[#747474]">
                 Get updates about new drops & exclusive offers
@@ -85,6 +92,8 @@ const Shippingdetails = ({
               className=" rounded-[10px] px-2.5 py-5 border"
               name="name"
               id="name"
+              onChange={(e) => setName(e.target.value)}
+              value={name}
               placeholder="Anuoluwapo Bamisaye"
             />
           </span>
@@ -95,7 +104,10 @@ const Shippingdetails = ({
               className=" rounded-[10px] px-2.5 border py-5"
               name=""
               id=""
+              onChange={(e) => setWallet(e.target.value)}
+              value={wallet}
             >
+              <option value=""></option>
               <option value="Metamask">Metamask</option>
               <option value="Coinbase">Coinbase</option>
               <option value="Trust wallet">Trust wallet</option>
@@ -144,6 +156,8 @@ const Shippingdetails = ({
               <label htmlFor="email">Postal code</label>
               <input
                 required
+                value={postal}
+                onChange={(e) => setPostal(e.target.value)}
                 type="text"
                 className="rounded-[10px] px-2.5 border py-5"
                 name=""
@@ -155,6 +169,8 @@ const Shippingdetails = ({
             <label htmlFor="email">Phone number</label>
             <input
               required
+              value={number}
+              onChange={(e) => setNumber(e.target.value)}
               type="text"
               className=" rounded-[10px] px-2.5 py-5 border"
               name="name"

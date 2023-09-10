@@ -10,11 +10,13 @@ import Auction from "./pages/auction";
 import Drops from "./pages/drops";
 import Bid from "./pages/bid";
 import Checkout from "./pages/checkout";
+import Success from "./pages/success";
+
 
 const DefaultLayout = ({ children }) => (
   <>
-    <ScrollToTop />
     <Header />
+    <ScrollToTop />
     {children}
     <Footer />
   </>
@@ -22,57 +24,88 @@ const DefaultLayout = ({ children }) => (
 
 const RouteSwitch = () => {
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <DefaultLayout>
-            <Home />
-          </DefaultLayout>
-        }
-      ></Route>
-      <Route
-        path="/market"
-        element={
-          <DefaultLayout>
-            <Marketplace />
-          </DefaultLayout>
-        }
-      ></Route>
-      <Route
-        path="/auction"
-        element={
-          <DefaultLayout>
-            <Auction />
-          </DefaultLayout>
-        }
-      ></Route>
-      <Route
-        path="/product-details/:id"
-        element={
-          <DefaultLayout>
-            <Productdetails />
-          </DefaultLayout>
-        }
-      ></Route>
-      <Route
-        path="/drop"
-        element={
-          <DefaultLayout>
-            <Drops />
-          </DefaultLayout>
-        }
-      ></Route>
-      <Route
-        path="/checkout"
-        element={
-          <DefaultLayout>
-            <Checkout />
-          </DefaultLayout>
-        }
-      ></Route>
-      <Route path="/livebid/:id" element={<Bid />}></Route>
-    </Routes>
+    <>
+      {" "}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <DefaultLayout>
+              <Home />
+            </DefaultLayout>
+          }
+        ></Route>
+        <Route
+          path="/market"
+          element={
+            <DefaultLayout>
+              <Marketplace />
+            </DefaultLayout>
+          }
+        ></Route>
+        <Route
+          path="/auction"
+          element={
+            <DefaultLayout>
+              <Auction />
+            </DefaultLayout>
+          }
+        ></Route>
+        <Route
+          path="/product-details/:id"
+          element={
+            <DefaultLayout>
+              <Productdetails />
+            </DefaultLayout>
+          }
+        ></Route>
+        <Route
+          path="/drop"
+          element={
+            <DefaultLayout>
+              <Drops />
+            </DefaultLayout>
+          }
+        ></Route>
+        <Route
+          path="/checkout/cart"
+          element={
+            <DefaultLayout>
+              <Checkout />
+            </DefaultLayout>
+          }
+        ></Route>
+
+        <Route
+          path="/checkout/shipping-details"
+          element={
+            <DefaultLayout>
+              <Checkout />
+            </DefaultLayout>
+          }
+        ></Route>
+
+        <Route
+          path="/checkout/success"
+          element={
+            <DefaultLayout>
+              <Success/>
+            </DefaultLayout>
+          }
+        ></Route>
+
+        <Route
+          path="/checkout/payment-details"
+          element={
+            <DefaultLayout>
+              <Checkout />
+            </DefaultLayout>
+          }
+        ></Route>
+
+        <Route path="/livebid/:id" element={<Bid />}></Route>
+      </Routes>
+    </>
   );
 };
 

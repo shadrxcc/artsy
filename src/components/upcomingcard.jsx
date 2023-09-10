@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import monalisa from "../assets/monalisa-desktop.png";
 import circle from "../assets/ellipse-6.svg";
 import { UpcomingContext } from "../context/upcomingcontext";
+import { Link } from "react-router-dom";
 
 const Upcomingcard = ({ data }) => {
   const { currentSlide, setCurrentSlide } = useContext(UpcomingContext);
@@ -36,9 +37,9 @@ const Upcomingcard = ({ data }) => {
             </div>
           </div>
 
-          <div className="flex items-center gap-7">
-            <p className="leading-8 text-2xl underline text-white">See more</p>
-            <button className="bg-transparent text-white w-[181px] h-[62px] text-2xl leading-8 rounded-[10px] border border-white">
+          <div className="flex items-center gap-y-7 gap-x-3">
+            <Link to={`/auction`}><p className="leading-8 text-base underline text-white">See more</p></Link>
+            <button className="bg-transparent text-white py-[4px] px-[6px] text-base leading-8 rounded-[10px] border border-white">
               Set a reminder
             </button>
           </div>

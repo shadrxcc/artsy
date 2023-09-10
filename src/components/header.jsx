@@ -11,7 +11,7 @@ import { CartContext } from "../context/cartcontext";
 
 const Header = () => {
   const [openmenu, setOpenMenu] = useState(false);
-  const location = useLocation()
+  const location = useLocation();
 
   const cartctx = useContext(CartContext);
 
@@ -45,7 +45,13 @@ const Header = () => {
               return (
                 <>
                   <Link to={link.nav} key={link.id}>
-                    <li key={link.id} id={`${location.pathname === link.nav ? 'active-link' : ''}`} className={`text-[#292929] text-base leading-[32px] font-[500]`}>
+                    <li
+                      key={link.id}
+                      id={`${
+                        location.pathname === link.nav ? "active-link" : ""
+                      }`}
+                      className={`text-[#292929] text-base leading-[32px] font-[500]`}
+                    >
                       {link.link}
                     </li>
                   </Link>
@@ -57,7 +63,7 @@ const Header = () => {
 
         <div className="flex items-center gap-x-[11px]">
           <img className={`w-[2em]`} src={searchmenu} alt="" />
-          <Link to={`/checkout`}>
+          <Link to={`/checkout/cart`}>
             <div className="flex">
               <img className={`w-[1.4em]`} src={cart} alt="" />
               <p className="text-[10px] text-white px-1.5 h-fit rounded-full bg-red-600">

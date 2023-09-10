@@ -13,6 +13,7 @@ const Featuredproducts = () => {
               desc={featured.desc}
               key={featured.id}
               title={featured.title}
+              reverse={featured.id % 2 !== 0}
             />
           );
         })}

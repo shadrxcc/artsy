@@ -11,7 +11,7 @@ const Marketauctionsnav = () => {
         <p className="text-2xl max-[280px]:text-base md:text-3xl lg:text-[48px] font-medium leading-[65px] text-[#333333]">
           Explore marketplace
         </p>
-        <Link to={'/market'}>
+        <Link to={"/market"}>
           <span>
             <img src={arrow} className="w-[81px] hidden md:block" alt="" />
             <img src={arrowmb} className="w-[60px] md:hidden" alt="" />
@@ -23,8 +23,10 @@ const Marketauctionsnav = () => {
         <p className="text-2xl max-[280px]:text-base md:text-3xl lg:text-[48px] font-medium leading-[65px] text-[#333333]">
           See auctions
         </p>
-        <img src={arrow} className="w-[81px] hidden md:block" alt="" />
-        <img src={arrowmb} className="w-[60px] md:hidden" alt="" />
+        <Link to={`/auction`}>
+          <img src={arrow} className="w-[81px] hidden md:block" alt="" />
+          <img src={arrowmb} className="w-[60px] md:hidden" alt="" />
+        </Link>
       </div>
       <hr className="h-[1px] bg-black" />
     </div>

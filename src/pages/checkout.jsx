@@ -4,9 +4,14 @@ import Shoppingcartmobile from "../components/shoppingcartmobile";
 import Shippingdetails from "../components/shippingdetails";
 import Paymentdetails from "../components/paymentdetails";
 import { CartContext } from "../context/cartcontext";
+import { useNavigate } from "react-router";
+import Spinner from "../components/spinner";
 
 const Checkout = () => {
   const [activebtn, setActivebtn] = useState("Shop");
+  const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate()
 
   const [activePage, setActivePage] = useState("Shopping cart");
 
@@ -26,6 +31,8 @@ const Checkout = () => {
 
   const cartStatus = cartcontext.items.length === 0;
   return (
+    <>
+    {loading && <Spinner/>}
     <div className="text-[#292929]">
       <div className="md:hidden">
         <p className="text-[#333] px-[10px] pb-8 font-medium text-base">
@@ -41,7 +48,7 @@ const Checkout = () => {
             className={`${
               activePage === "Shopping cart" ? "active-link" : ""
             } pb-3`}
-            onClick={() => setActivePage("Shopping cart")}
+           
           >
             Shopping cart
           </p>
@@ -49,7 +56,7 @@ const Checkout = () => {
             className={`${
               activePage === "Shipping details" ? "active-link" : ""
             } pb-3`}
-            onClick={() => setActivePage("Shipping details")}
+            
           >
             Shipping details
           </p>
@@ -57,7 +64,7 @@ const Checkout = () => {
             className={`${
               activePage === "Payment details" ? "active-link" : ""
             } pb-3`}
-            onClick={() => setActivePage("Payment details")}
+            
           >
             Payment details
           </p>
@@ -83,7 +90,7 @@ const Checkout = () => {
           Scheduled
         </button>
       </div>
-      {activePage === "Payment details" && <Paymentdetails numberofitems={numberofitems} grandtotal={grandtotal} shipping={shipping} total={total} />}
+      {activePage === "Payment details" && <Paymentdetails setLoading={setLoading} navigate={navigate} numberofitems={numberofitems} grandtotal={grandtotal} shipping={shipping} total={total} />}
       {activePage === "Shipping details" && (
         <Shippingdetails
           cartcontext={cartcontext}
@@ -102,11 +109,14 @@ const Checkout = () => {
             cartcontext={cartcontext}
             shipping={shipping}
             total={total}
+            navigate={navigate}
             numberofitems={numberofitems}
           />
           <Shoppingcartmobile
             cartStatus={cartStatus}
             cartcontext={cartcontext}
+            navigate={navigate}
+            setActivePage={setActivePage}
             shipping={shipping}
             grandtotal={grandtotal}
             total={total}
@@ -115,6 +125,7 @@ const Checkout = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 
