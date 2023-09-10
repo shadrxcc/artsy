@@ -19,7 +19,7 @@ const Featuredproduct = ({id, image, title, reverse, desc }) => {
         className="flex relative h-[305px] bg-cover md:w-[610px] bg-gray-700 bg-blend-overlay bg-center text-white text-center pt-10 text-4xl font-clash md:bg-transparent md:hover:bg-blend-overlay justify-center md:block"
         style={{ backgroundImage: `url(${image}) ` }}
       >
-        <p className="md:hidden clash text-white pt-3 font-semibold text-3xl absolute top-0">
+        <p className="md:hidden clash text-white pt-3 text-3xl absolute top-0">
           {title}
         </p>
         <button onClick={() => navigate(`/product-details/${id}`)} className="md:hidden absolute pb-3 pr-10 right-0 bottom-0 ">

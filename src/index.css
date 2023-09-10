@@ -82,8 +82,10 @@ html body {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%, lightgray 50%, #D9D9D9);
 }
 
-#featured:hover #featured-backdrop {
-  display: flex;
+@media (min-width: 768px) {
+  #featured:hover #featured-backdrop {
+    display: flex;
+  }
 }
 
 .belle {

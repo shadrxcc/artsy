@@ -2,6 +2,7 @@ import React from "react";
 import artsylogo from "../assets/ARTSY..svg";
 import mail from "../assets/Mail.svg";
 import location from "../assets/Location.svg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -29,16 +30,27 @@ const Footer = () => {
 
       <div className="flex flex-col lg:flex-row gap-y-[54px] md:items-center justify-around">
         <div className="hidden md:flex">
-          <img src={artsylogo} alt="" />
+          <Link to={`/`}> <img src={artsylogo} alt="" />
+          </Link>
+         
         </div>
 
         <div className="md:flex hidden gap-x-[135px]">
           <div>
             <ul className="text-xl flex flex-col gap-y-[33px] text-[#333333] leading-[35px]">
-              <li>Home</li>
-              <li>Marketplace</li>
-              <li>Auctions</li>
-              <li>Drops</li>
+              <Link to={`/`}>
+                {" "}
+                <li>Home</li>
+              </Link>
+              <Link to={`/market`}>
+                <li>Marketplace</li>
+              </Link>
+              <Link to={`/auction`}>
+                <li>Auctions</li>
+              </Link>
+              <Link to={`/drop`}>
+                <li>Drops</li>
+              </Link>
             </ul>
           </div>
 
@@ -53,7 +65,9 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col gap-y-[40px]">
-          <p className="text-[11px] md:hidden leading-[17px] text-[#333333]">REACH US</p>
+          <p className="text-[11px] md:hidden leading-[17px] text-[#333333]">
+            REACH US
+          </p>
           <span className="flex gap-[13px] items-center">
             <img className="w-[24px] md:w-[40px]" src={mail} alt="" />{" "}
             <p className="text-[#333333] text-[11px] md:text-xl leading-[16px] md:leading-[35px]">
