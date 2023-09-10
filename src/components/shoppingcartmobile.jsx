@@ -45,7 +45,7 @@ const Shoppingcartmobile = ({cartStatus, setActivePage, navigate, cartcontext, n
                   ></div>
                   <div className="flex flex-col max-[280px]:gap-y-5 gap-y-6 max-[280px]:text-sm text-base">
                     <p className="stix italic">{item.category}</p>
-                    <p>{item.name}</p>
+                    <p className="uppercase">{item.name}</p>
 
                     <div className="flex w-fit justify-center px-1 border-[1px] rounded-[10px] max-[280px]:gap-x-3 gap-x-5">
                       <img

@@ -50,12 +50,16 @@ const Shippingdetails = ({
     cartcontext.addItem({ ...item, amount: 1 });
   };
 
+
+  const clearItem = (id) => {
+    cartcontext.clearItem(id)
+  }
+
   const proceedPayment = (e) => {
     e.preventDefault();
     localStorage.setItem("Name", name);
     setActivePage("Payment details");
     navigate(`/checkout/payment-details`);
-    
   };
 
   return (
@@ -196,7 +200,7 @@ const Shippingdetails = ({
                   ></div>
                   <div className="flex flex-col gap-y-5 text-xl">
                     <div className="flex items-center gap-x-4">
-                      <p>{item.name}</p>
+                      <p className="uppercase">{item.name}</p>
                       <p className="text-sm font-semibold">x{item.amount}</p>
                     </div>
 
@@ -225,7 +229,7 @@ const Shippingdetails = ({
                 </div>
 
                 <div className="flex flex-col items-center justify-between">
-                  <img className="w-10" src={close} alt="" />
+                  <img className="w-10" onClick={() => clearItem(item.id)} src={close} alt="" />
                   <p className="text-2xl">${item.price}</p>
                 </div>
               </div>

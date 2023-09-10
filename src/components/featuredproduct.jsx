@@ -3,11 +3,13 @@ import boolean from "../assets/boolean-egyptian.svg";
 import button from "../assets/arrow-right.svg";
 import buttondark from "../assets/arrow-button.svg";
 import { Creators64 } from "./creators";
+import { useNavigate } from "react-router";
 // https://gist.githubusercontent.com/eniiku/65a95533de1f005eee35d5eb91f3e141/raw/c7188e070a8670a86883ff57224dcad277814761/products.json
-const Featuredproduct = ({ image, title, reverse, desc }) => {
+const Featuredproduct = ({id, image, title, reverse, desc }) => {
   const isReversed = reverse === true;
+  const navigate = useNavigate()
   return (
-    <div
+    <div key={id}
       className={`${
         isReversed ? "md:flex-row" : "md:flex-row-reverse"
       } flex flex-col py-[60px] border-t-2 border-[#333333] gap-8 md:items-center`}
@@ -20,7 +22,7 @@ const Featuredproduct = ({ image, title, reverse, desc }) => {
         <p className="md:hidden clash text-white pt-3 font-semibold text-3xl absolute top-0">
           {title}
         </p>
-        <button className="md:hidden absolute pb-3 pr-10 right-0 bottom-0 ">
+        <button onClick={() => navigate(`/product-details/${id}`)} className="md:hidden absolute pb-3 pr-10 right-0 bottom-0 ">
           <img className="max-[280px]:w-[2em]" src={button} alt="" />
         </button>
         <div
@@ -28,7 +30,7 @@ const Featuredproduct = ({ image, title, reverse, desc }) => {
           id="featured-backdrop"
         >
           <p className=" clash text-white text-3xl">{title}</p>
-          <button className="">
+          <button onClick={() => navigate(`/product-details/${id}`)} className="">
             <img className="w-[60px]" src={button} alt="" />
           </button>
         </div>
@@ -46,7 +48,7 @@ const Featuredproduct = ({ image, title, reverse, desc }) => {
           <p className="font-medium pl-4 pr-8 text-[.94rem] leading-5 md:text-[1.2em] lg:text-xl md:leading-8 text-[#333333]">
             64 major creators
           </p>
-          <button className="hidden md:block">
+          <button onClick={() => navigate(`/product-details/${id}`)} className="hidden md:block">
             <img className="" src={buttondark} alt="" />
           </button>
         </span>

@@ -10,60 +10,70 @@ import monalisa from "../assets/monalisa-desktop.png";
 import creatorone from "../assets/top-creator.svg";
 import creatortwo from "../assets/top-creator-2.svg";
 import creatorthree from "../assets/top-creator-3.svg";
-import philo from '../assets/philomena.svg'
-import egypt from '../assets/boolean-egypt.svg'
-import blanc from '../assets/blanc.svg'
-import ellipsia from '../assets/elypsia.svg'
-import lawmakers from '../assets/lawmakers.svg'
-import veil from '../assets/veil.svg'
-import alternate from '../assets/alternating.svg'
-import rose from '../assets/rosemary.svg'
-import beverly from '../assets/beverly.svg'
-import road from '../assets/road.svg'
+import philo from "../assets/philomena.svg";
+import egypt from "../assets/boolean-egypt.svg";
+import blanc from "../assets/blanc.svg";
+import ellipsia from "../assets/elypsia.svg";
+import lawmakers from "../assets/lawmakers.svg";
+import veil from "../assets/veil.svg";
+import alternate from "../assets/alternating.svg";
+import rose from "../assets/rosemary.svg";
+import beverly from "../assets/beverly.svg";
+import road from "../assets/road.svg";
 
-import philodeet from '../assets/philomena-details.svg'
-import egyptdeet from '../assets/boolean-egypt-details.svg'
-import blancdeet from '../assets/blanc-details.svg'
-import ellipsiadeet from '../assets/elypsia-details.svg'
-import lawmakersdeet from '../assets/lawmakers-details.svg'
-import veildeet from '../assets/veil-details.svg'
-import alternatedeet from '../assets/alternating-details.svg'
-import rosedeet from '../assets/rosemary-details.svg'
-import beverlydeet from '../assets/beverly-details.svg'
-
-var idn = uuid();
+import philodeet from "../assets/philomena-details.svg";
+import egyptdeet from "../assets/boolean-egypt-details.svg";
+import blancdeet from "../assets/blanc-details.svg";
+import ellipsiadeet from "../assets/elypsia-details.svg";
+import lawmakersdeet from "../assets/lawmakers-details.svg";
+import veildeet from "../assets/veil-details.svg";
+import alternatedeet from "../assets/alternating-details.svg";
+import rosedeet from "../assets/rosemary-details.svg";
+import beverlydeet from "../assets/beverly-details.svg";
+import bougie from '../assets/bougie.svg'
+import bougiedeets from '../assets/bougiedeets.svg'
+import circa from '../assets/circa59.svg'
+import circadeets from '../assets/circadeets.svg'
+import lost from '../assets/lost.svg'
+import lostdeets from '../assets/lostdeets.svg'
+import oloibiri from '../assets/oloibiri.svg'
+import oloibirideets from '../assets/oloibirideets.svg'
+import sassy from '../assets/sassy.svg'
+import sassydeets from '../assets/sassydeets.svg'
+import arewethere from '../assets/arewethere.svg'
+import arewetheredeets from '../assets/arewetheredeets.svg'
 
 export const navlink = [
   {
     id: 1,
     link: "Home",
-    nav: '/'
+    nav: "/",
   },
   {
     id: 2,
     link: "Marketplace",
-    nav: '/market'
+    nav: "/market",
   },
   {
     id: 3,
     link: "Auction",
-    nav: '/auction'
+    nav: "/auction",
   },
   {
     id: 4,
     link: "Drop",
-    nav: '/drop'
+    nav: "/drop",
   },
 ];
 
 export const icons = [
   {
     icon: searchmenu,
-    width: '2em'
+    width: "2em",
   },
   {
     icon: cart,
-    width: '1.4em'
+    width: "1.4em",
   },
   // {
   //     icon: notification
@@ -129,30 +139,25 @@ export default UpcomingData;
 export const topcreators = [
   {
     id: 1,
-    img: creatorone
+    img: creatorone,
   },
 
   {
     id: 2,
-    img: creatortwo
+    img: creatortwo,
   },
 
   {
     id: 3,
-    img: creatorthree
+    img: creatorthree,
   },
-]
-
-//auction https://gist.githubusercontent.com/eniiku/65a95533de1f005eee35d5eb91f3e141/raw/c7188e070a8670a86883ff57224dcad277814761/auction.json
-// carusel https://gist.githubusercontent.com/eniiku/65a95533de1f005eee35d5eb91f3e141/raw/c7188e070a8670a86883ff57224dcad277814761/carousel.json
-// drop https://gist.githubusercontent.com/eniiku/65a95533de1f005eee35d5eb91f3e141/raw/c7188e070a8670a86883ff57224dcad277814761/drops.json
-// products https://gist.githubusercontent.com/eniiku/65a95533de1f005eee35d5eb91f3e141/raw/c7188e070a8670a86883ff57224dcad277814761/products.json
+];
 
 export const productsdata = [
   {
     id: 1,
     name: "PHILOMENA ‘22",
-    price: 3.90,
+    price: 3.9,
     creator: "Lisa Frank",
     img: philo,
     detailsimg: philodeet,
@@ -165,7 +170,7 @@ export const productsdata = [
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
     status:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
-    feautured: true,
+    feautured: false,
   },
   {
     id: 2,
@@ -173,12 +178,13 @@ export const productsdata = [
     price: 150.0,
     creator: "Lola Oge",
     img: egypt,
+    featuredimg: boolean,
     detailsimg: egyptdeet,
     type: "Fashion",
     madeIn: "Egypt",
     views: 730,
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+      "Unveil Ancient Egypt's Secrets: The Boolean Egyptian Artifact. Decode the past, explore the enigma, and journey through time. Are you ready?",
     listing:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
     status:
@@ -219,7 +225,7 @@ export const productsdata = [
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
     status:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
-    feautured: true,
+    feautured: false,
   },
   {
     id: 5,
@@ -328,4 +334,114 @@ export const productsdata = [
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
     feautured: false,
   },
-]
+
+  {
+    id: 11,
+    description:
+      "Step into the timeless realm of the Pharaohs with the Egyptian Mummies Artifact. This extraordinary relic unveils the mysteries and rituals surrounding the ancient practice of mummification.",
+    featuredimg: feature2,
+    img: arewethere,
+    detailsimg: arewetheredeets,
+    creator: 'Tijani Siht',
+    name: "Are We There Yet?",
+    price: 70,
+    type: "Art & Museum",
+    madeIn: "Egypt",
+    views: 59,
+    listing:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    status:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    feautured: true,
+  },
+
+  {
+    id: 12,
+    description: "Step into the captivating story of Nigeria's oil industry with the Oloibiri 1997 Artifact. This remarkable relic captures the essence of a pivotal moment in the nation's history.",
+    featuredimg: feature3,
+    name: "Oloibiri 1997",
+    img: oloibiri,
+    detailsimg: oloibirideets,
+    price: 70,
+    type: "Art & Museum",
+    madeIn: "Nigeria",
+    views: 59,
+    listing:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    status:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    feautured: true,
+  },
+
+  {
+    id: 13,
+    name: "Sassy",
+    price: 44.0,
+    img: sassy,
+    type: "Photography",
+    detailsimg: sassydeets,
+    madeIn: "Nigeria",
+    views: 90,
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    listing:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    status:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    feautured: false,
+  },
+
+  {
+    id: 14,
+    name: "Bougie",
+    price: 65.0,
+    img: bougie,
+    type: "Fashion",
+    detailsimg: bougiedeets,
+    madeIn: "Nigeria",
+    views: 100,
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    listing:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    status:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    feautured: false,
+  },
+
+  {
+    id: 15,
+    name: "Lost",
+    price: 45.0,
+    img: lost,
+    type: "Photography",
+    detailsimg: lostdeets,
+    madeIn: "Nigeria",
+    views: 60,
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    listing:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    status:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    feautured: false,
+  },
+
+  {
+    id: 16,
+    name: "Circa '95",
+    price: 50.0,
+    img: circa,
+    type: "Photography",
+    detailsimg: circadeets,
+    madeIn: "Nigeria",
+    views: 100,
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    listing:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    status:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque explicabo expedita esse odit labore consequuntur tenetur.",
+    feautured: false,
+  },
+];

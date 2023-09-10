@@ -100,7 +100,7 @@ const Productdetails = () => {
         ></div>
         <div className=" md:border-[1px] md:border-l-0 md:border-black ">
           <div className="flex items-center md:p-5 justify-between">
-            <p className="text-base md:text-xl leading-[45px] font-bold">
+            <p className="text-base uppercase md:text-xl leading-[45px] font-bold">
               {targetData.name}
             </p>
             <p className="text-base md:text-xl leading-[45px] font-medium">

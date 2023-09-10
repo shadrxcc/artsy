@@ -1,18 +1,20 @@
 import React from "react";
 import Featuredproduct from "./featuredproduct";
-import { featureddata } from "./data";
+import { featureddata, productsdata } from "./data";
 
 const Featuredproducts = () => {
+  const featured = productsdata.filter((item) => item.feautured === true);
   return (
     <div>
       <div>
-        {featureddata.map((featured) => {
+        {featured.map((featured) => {
           return (
             <Featuredproduct
-              image={featured.image}
-              desc={featured.desc}
+              id={featured.id}
+              image={featured.featuredimg}
+              desc={featured.description}
               key={featured.id}
-              title={featured.title}
+              title={featured.name}
               reverse={featured.id % 2 !== 0}
             />
           );

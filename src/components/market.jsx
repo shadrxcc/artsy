@@ -156,7 +156,7 @@ const Market = () => {
                   <div className="md:bg-white hover:scale-100 flex gap-y-[10px] rounded-[15px] md:shadow-lg flex-col px-[14px] py-[20px] md:w-[230px] xl:w-[269px]">
                     <img src={product.img} className="w-[20em]" alt="" />
                     <span className="flex items-center justify-between md:items-start md:flex-col gap-y-[18px]">
-                      <p className="text-base font-medium leading-9 text-[#333333]">
+                      <p className="text-base uppercase font-medium leading-9 text-[#333333]">
                         {product.name}
                       </p>
                       <p className="text-base md:text-lg font-medium md:font-bold leading-10 text-[#333333]">

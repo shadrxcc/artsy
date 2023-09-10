@@ -44,7 +44,7 @@ const ShoppingcartDesktop = ({cartStatus, navigate, setActivePage, cartcontext, 
                   ></div>
                   <div className="flex flex-col gap-y-[22px] text-xl">
                     <div className="flex gap-x-4 items-center">
-                      <p>{item.name}</p>
+                      <p className="uppercase">{item.name}</p>
                       <p className="text-sm font-semibold">x{item.amount}</p>
                     </div>
 
