@@ -75,7 +75,7 @@ const Market = () => {
             type="text"
             name="search"
             className="text-xl pl-14 w-[215px] rounded-[15px] py-[14px] bg-[#F4F2F2] outline-none leading-[32px] text-[#999999] font-medium"
-            id="seacrh"
+            id="seacrh" disabled
             placeholder="Search"
           />
           <img src={search} className="absolute w-[40px]" alt="" />
@@ -154,7 +154,7 @@ const Market = () => {
               return (
                 <Link key={product.id} to={`/product-details/${product.id}`}>
                   <div className="md:bg-white hover:scale-100 flex gap-y-[10px] rounded-[15px] md:shadow-lg flex-col px-[14px] py-[20px] md:w-[230px] xl:w-[269px]">
-                    <img src={product.img} className="w-[357px]" alt="" />
+                    <img src={product.img} className="w-[20em]" alt="" />
                     <span className="flex items-center justify-between md:items-start md:flex-col gap-y-[18px]">
                       <p className="text-base font-medium leading-9 text-[#333333]">
                         {product.name}

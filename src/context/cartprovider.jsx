@@ -26,10 +26,7 @@ const cartReducer = (state, action) => {
     } else {
       updatedItems = state.items.concat(action.item);
     }
-    localStorage.setItem(
-      "CartItems",
-      JSON.stringify({ cartitems: updatedItems })
-    );
+    localStorage.setItem("CartItems", JSON.stringify(updatedItems));
     return {
       items: updatedItems,
       totalAmount: updatedAmount,
@@ -37,11 +34,12 @@ const cartReducer = (state, action) => {
   }
 
   if (action.type === "REMOVE") {
-    const updatedAmount = state.totalAmount - action.price;
+    
     const checkExistingItem = state.items.findIndex(
       (item) => item.id === action.id
     );
     const existing = state.items[checkExistingItem];
+    const updatedAmount = state.totalAmount - existing.price;
     let updatedItems;
     if (existing.amount === 1) {
       updatedItems = state.items.filter((item) => item.id !== action.id);
@@ -70,10 +68,6 @@ const cartReducer = (state, action) => {
     return initialState;
   }
 
-  if (action.type === "LOAD_CART") {
-    return action.items;
-  }  
-
   return initialState;
 };
 
@@ -84,14 +78,6 @@ const Cartprovider = (props) => {
     dispatchCart({ type: "ADD", item: item });
   };
 
-  // useEffect(() => {
-  //   const savedCartItems = JSON.parse(localStorage.getItem("CartItems"));
-
-  //   if (savedCartItems) {
-  //     dispatchCart({ type: "LOAD_CART", items: savedCartItems });
-  //   }
-  // }, []);
-
   const removeItemHandler = (id) => {
     dispatchCart({ type: "REMOVE", id: id });
   };
@@ -100,7 +86,6 @@ const Cartprovider = (props) => {
     dispatchCart({ type: "CLEAR_CART" });
   };
 
- 
   const clearItemHandler = (id) => {
     dispatchCart({ type: "CLEAR_ITEM", id: id });
   };

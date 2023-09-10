@@ -19,8 +19,6 @@ const Checkout = () => {
   const total = parseFloat(cartcontext.totalAmount.toFixed(2));
   const spfx = (total * 5) / 100;
   const shipping = parseFloat(spfx.toFixed(2))
-  console.log(cartcontext.items);
-  
   const gtfx = total + shipping;
   const grandtotal = parseFloat(gtfx.toFixed(2))
   
@@ -33,7 +31,7 @@ const Checkout = () => {
   return (
     <>
     {loading && <Spinner/>}
-    <div className="text-[#292929]">
+    <div className="text-[#292929] px-4">
       <div className="md:hidden">
         <p className="text-[#333] px-[10px] pb-8 font-medium text-base">
           Home/ Marketplace/ Cart

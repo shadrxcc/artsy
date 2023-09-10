@@ -70,7 +70,7 @@ const ShoppingcartDesktop = ({cartStatus, navigate, setActivePage, cartcontext, 
                   </div>
                 </div>
                 <div className="flex flex-col items-center justify-between">
-                  <img onClick={clearItem.bind(null, item.id)} className="w-10" src={close} alt="" />
+                  <img onClick={() => clearItem(item.id)} className="w-10" src={close} alt="" />
                   <p className="text-2xl">${item.price}</p>
                 </div>
               </div>

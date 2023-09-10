@@ -17,6 +17,10 @@ const Shoppingcartmobile = ({cartStatus, setActivePage, navigate, cartcontext, n
      cartcontext.addItem({...item, amount: 1});
    };
 
+   const clearItem = (id) => {
+    cartcontext.clearItem(id)
+  }
+
   return (
     <>
       {cartStatus ? (
@@ -63,7 +67,7 @@ const Shoppingcartmobile = ({cartStatus, setActivePage, navigate, cartcontext, n
                   </div>
                 </div>{" "}
                 <div className="flex flex-col items-center justify-between">
-                  <img className="w-8" src={close} alt="" />
+                  <img className="w-8" onClick={() => clearItem(item.id)} src={close} alt="" />
                   <p className="text-xl max-[280px]:text-sm font-bold">
                     ${item.price}
                   </p>
